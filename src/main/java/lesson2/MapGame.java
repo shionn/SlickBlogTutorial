@@ -17,6 +17,8 @@ import org.newdawn.slick.tiled.TiledMap;
 /**
  * Code sous licence GPLv3 (http://www.gnu.org/licenses/gpl.html)
  * 
+ * -Djava.library.path=target/natives
+ * 
  * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
  *         GCS d- s+:+ a- C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+
  *         G- e+++ h+ r- !y-
@@ -37,12 +39,12 @@ public class MapGame extends BasicGame {
     @Override
     public void init(GameContainer container) throws SlickException {
         this.container = container;
-        map = new TiledMap("exemple.map");
+        this.map = new TiledMap("map/exemple.tmx");
     }
 
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-        map.render(0, 0);
+        this.map.render(0, 0);
     }
 
     @Override
@@ -52,7 +54,7 @@ public class MapGame extends BasicGame {
     @Override
     public void keyReleased(int key, char c) {
         if (Input.KEY_ESCAPE == key) {
-            container.exit();
+            this.container.exit();
         }
     }
 

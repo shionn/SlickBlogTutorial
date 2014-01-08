@@ -27,40 +27,59 @@ import org.newdawn.slick.tiled.TiledMap;
  */
 public class CharacterGame extends BasicGame {
 
-	private GameContainer container;
-	private TiledMap map;
+    private GameContainer container;
+    private TiledMap map;
 
-	public static void main(String[] args) throws SlickException {
-		new AppGameContainer(new CharacterGame(), 800, 600, false).start();
-	}
+    private int direction = 0;
+    private boolean moving = false;
+    private Animation[] animations = new Animation[8];
 
-	public CharacterGame() {
-		super("Lesson 3 :: CharacterGame");
-	}
+    public static void main(String[] args) throws SlickException {
+        new AppGameContainer(new CharacterGame(), 800, 600, false).start();
+    }
 
-	@Override
-	public void init(GameContainer container) throws SlickException {
-		this.container = container;
-		this.map = new TiledMap("map/exemple.tmx");
-		SpriteSheet spriteSheet = new SpriteSheet("sprites/character.png", 32, 32);
-		Animation animation = new Animation();
-		animation.addFrame(spriteSheet.getSprite(0, 0), 100);
-	}
+    public CharacterGame() {
+        super("Lesson 3 :: CharacterGame");
+    }
 
-	@Override
-	public void render(GameContainer container, Graphics g) throws SlickException {
-		this.map.render(0, 0);
-	}
+    @Override
+    public void init(GameContainer container) throws SlickException {
+        this.container = container;
+        this.map = new TiledMap("map/exemple.tmx");
 
-	@Override
-	public void update(GameContainer container, int delta) throws SlickException {
-	}
+        SpriteSheet spriteSheet = new SpriteSheet("sprite/character.png", 576 / 9, 256 / 4);
+        animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
+        animations[1] = loadAnimation(spriteSheet, 0, 1, 1);
+        animations[2] = loadAnimation(spriteSheet, 0, 1, 2);
+        animations[3] = loadAnimation(spriteSheet, 0, 1, 3);
+        animations[4] = loadAnimation(spriteSheet, 1, 9, 0);
+        animations[5] = loadAnimation(spriteSheet, 1, 9, 1);
+        animations[6] = loadAnimation(spriteSheet, 1, 9, 2);
+        animations[7] = loadAnimation(spriteSheet, 1, 9, 3);
+    }
 
-	@Override
-	public void keyReleased(int key, char c) {
-		if (Input.KEY_ESCAPE == key) {
-			this.container.exit();
-		}
-	}
+    private Animation loadAnimation(SpriteSheet spriteSheet, int startX, int endX, int y) {
+        Animation animation = new Animation();
+        for (int x = startX; x < endX; x++) {
+            animation.addFrame(spriteSheet.getSprite(x, y), 100);
+        }
+        return animation;
+    }
+
+    @Override
+    public void render(GameContainer container, Graphics g) throws SlickException {
+        this.map.render(0, 0);
+    }
+
+    @Override
+    public void update(GameContainer container, int delta) throws SlickException {
+    }
+
+    @Override
+    public void keyReleased(int key, char c) {
+        if (Input.KEY_ESCAPE == key) {
+            this.container.exit();
+        }
+    }
 
 }

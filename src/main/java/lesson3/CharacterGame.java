@@ -78,6 +78,22 @@ public class CharacterGame extends BasicGame {
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
+        if (this.moving) {
+            switch (this.direction) {
+                case 0:
+                    this.y -= .1f * delta;
+                    break;
+                case 1:
+                    this.x -= .1f * delta;
+                    break;
+                case 2:
+                    this.y += .1f * delta;
+                    break;
+                case 3:
+                    this.x += .1f * delta;
+                    break;
+            }
+        }
     }
 
     @Override

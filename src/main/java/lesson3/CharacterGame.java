@@ -80,18 +80,18 @@ public class CharacterGame extends BasicGame {
     public void update(GameContainer container, int delta) throws SlickException {
         if (this.moving) {
             switch (this.direction) {
-                case 0:
-                    this.y -= .1f * delta;
-                    break;
-                case 1:
-                    this.x -= .1f * delta;
-                    break;
-                case 2:
-                    this.y += .1f * delta;
-                    break;
-                case 3:
-                    this.x += .1f * delta;
-                    break;
+            case 0:
+                this.y -= .1f * delta;
+                break;
+            case 1:
+                this.x -= .1f * delta;
+                break;
+            case 2:
+                this.y += .1f * delta;
+                break;
+            case 3:
+                this.x += .1f * delta;
+                break;
             }
         }
     }
@@ -107,22 +107,22 @@ public class CharacterGame extends BasicGame {
     @Override
     public void keyPressed(int key, char c) {
         switch (key) {
-            case Input.KEY_UP:
-                this.direction = 0;
-                this.moving = true;
-                break;
-            case Input.KEY_LEFT:
-                this.direction = 1;
-                this.moving = true;
-                break;
-            case Input.KEY_DOWN:
-                this.direction = 2;
-                this.moving = true;
-                break;
-            case Input.KEY_RIGHT:
-                this.direction = 3;
-                this.moving = true;
-                break;
+        case Input.KEY_UP:
+            this.direction = 0;
+            this.moving = true;
+            break;
+        case Input.KEY_LEFT:
+            this.direction = 1;
+            this.moving = true;
+            break;
+        case Input.KEY_DOWN:
+            this.direction = 2;
+            this.moving = true;
+            break;
+        case Input.KEY_RIGHT:
+            this.direction = 3;
+            this.moving = true;
+            break;
         }
     }
 }

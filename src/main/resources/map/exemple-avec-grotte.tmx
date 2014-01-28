@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="grass" tilewidth="32" tileheight="32">
+  <image source="tuiles/grass.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="19" name="mountains" tilewidth="32" tileheight="32">
+  <image source="tuiles/mountains.png" width="384" height="288"/>
+ </tileset>
+ <tileset firstgid="127" name="watergrass" tilewidth="32" tileheight="32">
+  <image source="tuiles/watergrass.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="145" name="water" tilewidth="32" tileheight="32">
+  <image source="tuiles/water.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="163" name="hole" tilewidth="32" tileheight="32">
+  <image source="tuiles/hole.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="181" name="holek" tilewidth="32" tileheight="32">
+  <image source="tuiles/holek.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="199" name="holemid" tilewidth="32" tileheight="32">
+  <image source="tuiles/holemid.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="217" name="waterfall" tilewidth="32" tileheight="32">
+  <image source="tuiles/waterfall.png" width="96" height="160"/>
+ </tileset>
+ <tileset firstgid="232" name="dirt" tilewidth="32" tileheight="32">
+  <image source="tuiles/dirt.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="250" name="grassalt" tilewidth="32" tileheight="32">
+  <image source="tuiles/grassalt.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="268" name="trunk" tilewidth="32" tileheight="32">
+  <image source="tuiles/trunk.png" width="192" height="96"/>
+ </tileset>
+ <tileset firstgid="286" name="treetop" tilewidth="32" tileheight="32">
+  <image source="tuiles/treetop.png" width="192" height="224"/>
+ </tileset>
+ <tileset firstgid="328" name="chests" tilewidth="32" tileheight="32">
+  <image source="tuiles/chests.png" width="64" height="96"/>
+ </tileset>
+ <tileset firstgid="334" name="bridges" tilewidth="32" tileheight="32">
+  <image source="tuiles/bridges.png" width="192" height="224"/>
+ </tileset>
+ <tileset firstgid="376" name="logic" tilewidth="32" tileheight="32">
+  <image source="tuiles/logic.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="401" name="brackish" tilewidth="32" tileheight="32">
+  <image source="tuiles/brackish.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="419" name="buckets" tilewidth="32" tileheight="32">
+  <image source="tuiles/buckets.png" width="96" height="64"/>
+ </tileset>
+ <tileset firstgid="425" name="cabinets" tilewidth="32" tileheight="32">
+  <image source="tuiles/cabinets.png" width="192" height="416"/>
+ </tileset>
+ <tileset firstgid="503" name="cement" tilewidth="32" tileheight="32">
+  <image source="tuiles/cement.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="521" name="cementstair" tilewidth="32" tileheight="32">
+  <image source="tuiles/cementstair.png" width="160" height="128"/>
+ </tileset>
+ <tileset firstgid="541" name="country" tilewidth="32" tileheight="32">
+  <image source="tuiles/country.png" width="160" height="128"/>
+ </tileset>
+ <tileset firstgid="561" name="dungeon" tilewidth="32" tileheight="32">
+  <image source="tuiles/dungeon.png" width="416" height="256"/>
+ </tileset>
+ <tileset firstgid="665" name="inside" tilewidth="32" tileheight="32">
+  <image source="tuiles/inside.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="765" name="signs" tilewidth="32" tileheight="32">
+  <image source="tuiles/signs.png" width="96" height="64"/>
+ </tileset>
+ <layer name="background" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3bW07jMBSA4bz3pckeEM8sgK1BkSgCWi5LZA2sgFaqhTk4zvGtceP/4dMwmU6b5seOk8Kq67pVZlczCt3Xu8rkbkEPetTQo8Rx7BWPGQr2+BZ66+sWe8R26sVjcrSQau8x1/jWaHG+WlIPzXNpx8hSe6wr7CH/zdUoV4+55gTt62nO48bNiOsMPez9aLlHiFuP0Pau8WHWDiV75Dq+qT3kOJBrJ83Y8fWQXWQj+VpzzVe19KgNPX6/RzXXhyX45qup65Kl9UhZV0nbg6dEskfu8V57Dw3XuHFtez54Eb6U2wx6pM0v9vhy9dA00PSQ+2DW1PQY5+uhpe0Rq8UeH47j/BnRo8R+t9hDy9Wt9H4vqcfUWiznfHXuHuaeif16sd1CnrOm8UEPelxCj9Dr8rHHu3q80yPb+Ai5576U8aF9rLbf1HOmvJepPvTI38NeQw1d2P0teqT1yHkvcQk9Qml6aJ6jlJge8rq95P6V6JH63Jp9Dj2PG7uD/cHD6dhuTn/fi+0+9Cg3Tl5HttNjukfOc0lKD/l/au5RommKqevCGnu0yO5hr5npMU3OU7Hncl8Pud11n50e5dg9jr17sZ3xkZf2cxB5bHfd3/Wvy1sF7+8SHL/HtXPZWA/pvoL3dak0v6Pj65H73gz0fONjrGuOdURrBs/x1PaAX4mf2Y2Zr5jPyjXyjY/Beg0anAfzVTnbLvxn1B/pEa0f+dpI+cyPHvHMXC6bmB6bbvraWnutPVh/cg5xC713jnlo1q5z/Z5bi3KMD3qNK7FWWnf/xwznBZ1zrZUYEzqhayQ+l5gH38/Lwz1zAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQgx9/bktRQJwAAA==
+  </data>
+ </layer>
+ <layer name="background 2" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2aWW/UMBSFHUoLD5StewtqgVKQ2MoisRUYCZAKT2yPZRFPZXkpGgFPIPE72dcfgQRcN7HGubWdeOLJMpxPOmrUSTxJTn3ujdPhSIjtpG2k4QDb80KINmmSNJVoWqT5RPqc6Av7rC3s6GPysWdJc45jm8II3cNR0u4ozPZ8Mq7y5SBpgX2nyY+UDzROpGlT1BlTp62N3S9+TNG1TpMmozDb6p4tkm6RbpNOse98T/qQ6KPhnAZonM2aBqONY55MpMau2o8DpKMFtV90ciYUyo8l0grpPuky22fD/GDz4a8w+6GPeSmRGrtqP06QzhXUcdHJmVAoP5ZJq6QnpJtsH+4Hnw9cyg99zBuJ1NhV+3GRdK2gLohOzoRC1Q0X3I8h+v4tDm3NcX5V+7GvwLFryU95Db3Iq7Zwe8Lrx2ER1wJeGw7pB7FM0+u8upa5YFfhTxE/FPIaepVXLvj8OCPiWsBrw2ntmAHDOQ720A/f+nwswHfKawidV4sZn8t5w/1oibgW8NpwRTuubD986/N57Vg133Wl5rqFbvNKf/7jLPkNtQ7vhxX6XCvbD9/6fF07Vs13Xfpct9FtXunPf5xu/OD9sKJKP4rUg5bozHHTXLfRbV7pz3+cZcO5mKSQf1u8H1a4/ND7YEmv/Fhz7mVGrhm8YL+7Q7pLumc5RuZ4L/qrkJj8+C3SfbDq46qYH6Y6oa8Z6DwgPSQ9EvZa0ov+Kg9fSd8SfXfsZ/Jj0HKuR0Tc54Qijx+mOqGvGeg8JT0jPRf2WtKL/ioPP0g/E/1y7Ofjx1kR9zmhyONHS5iz2JS/L0mvSK+FvZY0Ma+UHzwrroq4FoUijx+yTmStRUj4e4IZy35V5VVeXH7YsiIUef3IQ55nZElVeZUX/TqGovRaVku4+7aihPJDzp8sP1QvlpVXrue+MnBdR96/zW6ZII2SxkgjyTbXQvK5C3nsPDvONua4cOeV67mvDKr0Q/JGxPNkNtk2kTWPZj3HdOWV67mvDKr2Q60TunppXz+yxmxKf8Upww/ZP6+v6Uf2XtrXj6wxm9JfKVR/WYYfsn/+I+L3x7ZemtcAU23wGbMp/ZWO/n8lVaPPD1Nt4PMjC+RVMXQ/TLXB14+m5ZWiLn7o5Kk3WdQ9r2zrEXX0I0+9yaLOeSXf/ZrWs21r2v1AnfNKvms0rVHZ1rT7gbLz6p3Hvv+jH1Xl1dsc+7je/cp3DDvovHeSdkXp7SZT57zKYozOe5w0EaW3m4xvXlW95qszQ+ewh7Q3Sm83Gd97W/Wab7/je2+rXvPtd3Bv60VdagGIQS2oF8ireoG8qhfIq3qBvKoXofNqBd4WInRePYYfhQidV/CjGKHzahV+FAL9Vb1AfwUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHz4B2g7VQBAnAAA
+  </data>
+ </layer>
+ <layer name="background 3" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3YSwrCMBAA0OQEKvhZqIj3ENfieXpyT2AWLlpoLUjapPIeDATShpDQGTohAAAAAH2a0hsgC/cIwJAmqBPUaRVDWKfYxO54ar6Hfrt09vsUh9gdT8ldDDumsz+lOMfueC7bzM8t3epz9u0cNUe+GvMqvQGYyT3FbQFr1qCdr/pyVw7PFI8v89eR9y8/rAkwh3+tDUulNlCbGv4BoZRSfVz6lejjMqx0HxcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIKc3GEOLzkCcAAA=
+  </data>
+ </layer>
+ <layer name="overground" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3Yy0rDUBAG4OZFVLzhtbYu1IW6Vt//gZxCu8gihcRQZ06/DwbO4pSGHOZnTpbdYvEU9Ri1nGHN35zHO7zwHtO4ibO4dR5pyJlc5FUu8ioXeZXLlLw6if2nUWfOcXZT8uoy9l9FXTuP2U3Jq7vYfx/1MPJ3q6j1tnbWA3uP1SHnq6+o723tbNY/h/n7EsxXuZivcnEfzKVyXq3iuddRz11/XVnlvHqJ536Neuv668r25VX2e997PNdH1GfXX1e2L6+y3/ta7I99eTX13ncoLfZH5fmqxf6oPF+12B/mq1wq51WL/VE5r1rsj8p51WJ/VM6rFvujcl612B+V86rF/qiQV0PfcVvsjwp5NdQHLfbH2Lz6j2++Q33QYn+Mzavs33yrG5tX2b/5Vld5vmpRhfnqmFSYr46JvMpFXuUir3KRV7nIq1zkVS7yKhd5lYu8ykVeAQAAAAAAAAAAAAAAAAAAAAAAAAAAzOMXibIjo0CcAAA=
+  </data>
+ </layer>
+ <layer name="overground 2" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3TuQ2AMBBFwXVHQP+NcEMnGMkJgQlxwIz0pQ03eREAAADwjTFvKpsb/0LEnneUnU0/4bbkrWVb41/QBwBtdSmizxvS8wb0AW/0AXX6gDp9QJ0+oE4fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/MUFYYIjIECcAAA=
+  </data>
+ </layer>
+ <layer name="logic" width="100" height="100" visible="0" opacity="0.25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2ciU7DMBAFyV+XsxWHgH41VNTCCj7WV/1CZySrSEnWu57YTltgt9zc7GhSrSf75ffVxT8sf89ZH7PksQ/kflj1V8rssVf1YY2NjzJ8H46ePhz4sOHG7N2L+9HJhx/zcflpLvZsH6/Lb0617W2Qj1zMWh+t/Ybo5aOlDpd3bQ0p/LG2nHOq4z5S40NBblv20VpDLqa1X1fH2l/NWoqPdMzY/X56Xftwa6/DX09H1zLCR2i+W+b6pX2U3luWubbut5RYTv7+vFvye7H/zBKLOaoG12cq5tZ9tKw/zqXv0TLXR8yPd8O9lLq31vlZGeWjJuYhkIvL7y4Sz1/HVbH4cPnPmB+x58LQtfuzi9M1sb1ktI9YviXNygwfpdfeZ+oa7aPVhbqPV+98y/qb20u27CM293rlaPER2idCPH+f8+S14z/00TqfcnFSPlw/1mcw63MJPsp9+H1Y95icDxcTH/E4n+e15WX5u9649nk+nuL5vD7518ViHg01tPjasg9/nqTe4+bmSOw7tFTMUeADH71zxIeWj9MeccwcT+0NoWtzMUfxH3yUtty931JzK/jAx4wc8aHrI7c3bN3H6Fpm5DjLx+0Gapk99pf0Eat55Fi05qbQRtPqIvY9b6ifltxU2mhifZXkt3aZ+3mLbMnHNdCy5tb0g480zA8t8KHFbB+h864ZNR/XDj60wIcW+NACH1rgQ4uaMcr9zrof95rfS9RQM0bWz/7wUc6lfcT+Ngh+aPUBfcGHFvjQwvr5KnvzZcCHFi0ueFbqD/e5FvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woUXr/yOj9W9fIjI/i0CcAAA=
+  </data>
+ </layer>
+ <objectgroup name="trigger" width="100" height="100">
+  <object name="sortie-grotte-1" type="teleport" x="2752" y="800">
+   <properties>
+    <property name="dest-x" value="36"/>
+    <property name="dest-y" value="9"/>
+   </properties>
+   <polygon points="0,0 0,32 -64,32 -64,0"/>
+  </object>
+  <object name="sortie-grotte-3" type="teleport" x="2976" y="672">
+   <properties>
+    <property name="dest-x" value="45"/>
+    <property name="dest-y" value="5"/>
+   </properties>
+   <polygon points="0,0 64,0 64,32 0,32"/>
+  </object>
+  <object name="sortie-grotte-2" type="teleport" x="2304" y="672">
+   <properties>
+    <property name="dest-x" value="24"/>
+    <property name="dest-y" value="5"/>
+   </properties>
+   <polygon points="0,0 64,0 64,32 0,32"/>
+  </object>
+  <object name="entree-grotte-1" type="teleport" x="1120" y="224">
+   <properties>
+    <property name="dest-x" value="85"/>
+    <property name="dest-y" value="22.5"/>
+   </properties>
+   <polygon points="0,0 64,0 64,32 0,32"/>
+  </object>
+  <object name="entree-grotte-3" type="teleport" x="1408" y="96">
+   <properties>
+    <property name="dest-x" value="94"/>
+    <property name="dest-y" value="18.5"/>
+   </properties>
+   <polygon points="0,0 0,32 64,32 64,0"/>
+  </object>
+  <object name="entree-grotte-2" type="teleport" x="736" y="96">
+   <properties>
+    <property name="dest-x" value="73"/>
+    <property name="dest-y" value="18.5"/>
+   </properties>
+   <polygon points="0,0 64,0 64,32 0,32"/>
+  </object>
+  <object name="grotte-lvl-change" type="escalator" x="2913" y="448">
+   <properties>
+    <property name="sens" value="add"/>
+   </properties>
+   <polygon points="0,0 63,-64 63,-96 -1,-32"/>
+  </object>
+ </objectgroup>
+</map>

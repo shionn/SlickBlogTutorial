@@ -103,52 +103,42 @@
   </data>
  </layer>
  <objectgroup name="trigger" width="100" height="100">
-  <object name="sortie-grotte-3" type="teleport" x="2976" y="672" width="64" height="32">
+  <object name="sg-1" type="teleport" x="2688" y="800" width="64" height="32">
    <properties>
-    <property name="dest-x" value="45"/>
-    <property name="dest-y" value="5"/>
-   </properties>
-   <polygon points="0,0 64,0 64,32 0,32"/>
-  </object>
-  <object name="sortie-grotte-2" type="teleport" x="2304" y="672" width="64" height="32">
-   <properties>
-    <property name="dest-x" value="24"/>
-    <property name="dest-y" value="5"/>
-   </properties>
-   <polygon points="0,0 64,0 64,32 0,32"/>
-  </object>
-  <object name="entree-grotte-1" type="teleport" x="1120" y="224" width="64" height="32">
-   <properties>
-    <property name="dest-x" value="85"/>
-    <property name="dest-y" value="22.5"/>
-   </properties>
-   <polygon points="0,0 64,0 64,32 0,32"/>
-  </object>
-  <object name="entree-grotte-3" type="teleport" x="1408" y="96" width="64" height="32">
-   <properties>
-    <property name="dest-x" value="94"/>
-    <property name="dest-y" value="18.5"/>
-   </properties>
-   <polygon points="0,0 0,32 64,32 64,0"/>
-  </object>
-  <object name="entree-grotte-2" type="teleport" x="736" y="96" width="64" height="32">
-   <properties>
-    <property name="dest-x" value="73"/>
-    <property name="dest-y" value="18.5"/>
-   </properties>
-   <polygon points="0,0 64,0 64,32 0,32"/>
-  </object>
-  <object name="grotte-lvl-change" type="escalator" x="2913" y="448" width="64" height="96">
-   <properties>
-    <property name="sens" value="add"/>
-   </properties>
-   <polygon points="0,0 63,-64 63,-96 -1,-32"/>
-  </object>
-  <object name="sortie-grotte-1" type="teleport" x="2688" y="800" width="64" height="32">
-   <properties>
-    <property name="dest-x" value="36"/>
-    <property name="dest-y" value="9"/>
+    <property name="dest-x" value="1152"/>
+    <property name="dest-y" value="288"/>
    </properties>
   </object>
+  <object name="eg-1" type="teleport" x="1120" y="224" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="2720"/>
+    <property name="dest-y" value="720"/>
+   </properties>
+  </object>
+  <object name="eg-3" type="teleport" x="1408" y="96" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="3008"/>
+    <property name="dest-y" value="592"/>
+   </properties>
+  </object>
+  <object name="eg-2" type="teleport" x="736" y="96" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="2336"/>
+    <property name="dest-y" value="592"/>
+   </properties>
+  </object>
+  <object name="sg-2" type="teleport" x="2304" y="672" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="768"/>
+    <property name="dest-y" value="160"/>
+   </properties>
+  </object>
+  <object name="sg-3" type="teleport" x="2976" y="672" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="1440"/>
+    <property name="dest-y" value="160"/>
+   </properties>
+  </object>
+  <object name="stair" type="stair" x="2912" y="352" width="64" height="96"/>
  </objectgroup>
 </map>

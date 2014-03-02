@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="100" height="100" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="grass" tilewidth="32" tileheight="32">
+  <image source="tuiles/grass.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="19" name="mountains" tilewidth="32" tileheight="32">
+  <image source="tuiles/mountains.png" width="384" height="288"/>
+ </tileset>
+ <tileset firstgid="127" name="watergrass" tilewidth="32" tileheight="32">
+  <image source="tuiles/watergrass.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="145" name="water" tilewidth="32" tileheight="32">
+  <image source="tuiles/water.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="163" name="hole" tilewidth="32" tileheight="32">
+  <image source="tuiles/hole.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="181" name="holek" tilewidth="32" tileheight="32">
+  <image source="tuiles/holek.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="199" name="holemid" tilewidth="32" tileheight="32">
+  <image source="tuiles/holemid.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="217" name="waterfall" tilewidth="32" tileheight="32">
+  <image source="tuiles/waterfall.png" width="96" height="160"/>
+ </tileset>
+ <tileset firstgid="232" name="dirt" tilewidth="32" tileheight="32">
+  <image source="tuiles/dirt.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="250" name="grassalt" tilewidth="32" tileheight="32">
+  <image source="tuiles/grassalt.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="268" name="trunk" tilewidth="32" tileheight="32">
+  <image source="tuiles/trunk.png" width="192" height="96"/>
+ </tileset>
+ <tileset firstgid="286" name="treetop" tilewidth="32" tileheight="32">
+  <image source="tuiles/treetop.png" width="192" height="224"/>
+ </tileset>
+ <tileset firstgid="328" name="chests" tilewidth="32" tileheight="32">
+  <image source="tuiles/chests.png" width="64" height="96"/>
+ </tileset>
+ <tileset firstgid="334" name="bridges" tilewidth="32" tileheight="32">
+  <image source="tuiles/bridges.png" width="192" height="224"/>
+ </tileset>
+ <tileset firstgid="376" name="logic" tilewidth="32" tileheight="32">
+  <image source="tuiles/logic.png" width="160" height="160"/>
+ </tileset>
+ <tileset firstgid="401" name="brackish" tilewidth="32" tileheight="32">
+  <image source="tuiles/brackish.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="419" name="buckets" tilewidth="32" tileheight="32">
+  <image source="tuiles/buckets.png" width="96" height="64"/>
+ </tileset>
+ <tileset firstgid="425" name="cabinets" tilewidth="32" tileheight="32">
+  <image source="tuiles/cabinets.png" width="192" height="416"/>
+ </tileset>
+ <tileset firstgid="503" name="cement" tilewidth="32" tileheight="32">
+  <image source="tuiles/cement.png" width="96" height="192"/>
+ </tileset>
+ <tileset firstgid="521" name="cementstair" tilewidth="32" tileheight="32">
+  <image source="tuiles/cementstair.png" width="160" height="128"/>
+ </tileset>
+ <tileset firstgid="541" name="country" tilewidth="32" tileheight="32">
+  <image source="tuiles/country.png" width="160" height="128"/>
+ </tileset>
+ <tileset firstgid="561" name="dungeon" tilewidth="32" tileheight="32">
+  <image source="tuiles/dungeon.png" width="416" height="256"/>
+ </tileset>
+ <tileset firstgid="665" name="inside" tilewidth="32" tileheight="32">
+  <image source="tuiles/inside.png" width="320" height="320"/>
+ </tileset>
+ <tileset firstgid="765" name="signs" tilewidth="32" tileheight="32">
+  <image source="tuiles/signs.png" width="96" height="64"/>
+ </tileset>
+ <layer name="background" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3bW07jMBSA4bz3pckeEM8sgK1BkSgCWi5LZA2sgFaqhTk4zvGtceP/4dMwmU6b5seOk8Kq67pVZlczCt3Xu8rkbkEPetTQo8Rx7BWPGQr2+BZ66+sWe8R26sVjcrSQau8x1/jWaHG+WlIPzXNpx8hSe6wr7CH/zdUoV4+55gTt62nO48bNiOsMPez9aLlHiFuP0Pau8WHWDiV75Dq+qT3kOJBrJ83Y8fWQXWQj+VpzzVe19KgNPX6/RzXXhyX45qup65Kl9UhZV0nbg6dEskfu8V57Dw3XuHFtez54Eb6U2wx6pM0v9vhy9dA00PSQ+2DW1PQY5+uhpe0Rq8UeH47j/BnRo8R+t9hDy9Wt9H4vqcfUWiznfHXuHuaeif16sd1CnrOm8UEPelxCj9Dr8rHHu3q80yPb+Ai5576U8aF9rLbf1HOmvJepPvTI38NeQw1d2P0teqT1yHkvcQk9Qml6aJ6jlJge8rq95P6V6JH63Jp9Dj2PG7uD/cHD6dhuTn/fi+0+9Cg3Tl5HttNjukfOc0lKD/l/au5RommKqevCGnu0yO5hr5npMU3OU7Hncl8Pud11n50e5dg9jr17sZ3xkZf2cxB5bHfd3/Wvy1sF7+8SHL/HtXPZWA/pvoL3dak0v6Pj65H73gz0fONjrGuOdURrBs/x1PaAX4mf2Y2Zr5jPyjXyjY/Beg0anAfzVTnbLvxn1B/pEa0f+dpI+cyPHvHMXC6bmB6bbvraWnutPVh/cg5xC713jnlo1q5z/Z5bi3KMD3qNK7FWWnf/xwznBZ1zrZUYEzqhayQ+l5gH38/Lwz1zAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQgx9/bktRQJwAAA==
+  </data>
+ </layer>
+ <layer name="background 2" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2a2W7UMBSGHUqBC8rWvQW1QClIbGWR2AqMBEiFK7bLsoirstwUjYArkHgbdngf9vUhkIDjJtY4ru3EE0+cDP8n/WrUic84+etzTpz2RYytI60l9Xk4nmKMNUkjpNFEYyzNJ9LnRF+Uz5rMjBxTjT1BmrSMrQv9dA8HSJsiP8dTSVzhyw7StPKdOj9SPlCcSNKKqBVTpinF7hY/Rulax0gjkZ9jcc9mSBdJl0gHle98T/qQ6KNmTj0UZ6Wk3mh5zAOJROzQfmwn7SmobayVZ3wh/JglzZOukU4p5yxbH8p6+Mv0fsgxTyYSsUP7sZ90tKD2sVae8YXwY460QLpNuqCco/qhrgdVwg855vlEInZoP06QzhbUcdbKM74QdcOG6scq+v7VFq3JMb/QfmwtMHYx+cmvoRP5qsnsnqj1YxeLa4FaG3bKg5ScJtd5cS2T3q7CnSJ+CPg1dCpf2VDXx2EW1wK1NhySxvRo5tjbQT9c6/NeD9/Jr8F3vprJ+JyvG9WPBotrgVobTkvjyvbDtT4fk8aK9S4rtdYNtJuv5Oc/lVm3UEuo/bBAXmtl++Fan89JY8V6lyWvdRPt5iv5+U+lHT/UflgQ0o8i9aDBWmtct9ZNtJuv5Oc/lTnNXHQS8L8ttR8W2PyQ+2BOp/xYtJ6lh+8Z3Fd+d5l0hXTVMIbn8U70Vz7R+fGbpftg0ceFWB+6OiHvGchcJ90g3WTmWtKJ/ioPX0nfEn23nKfzo9cw190s7nN8kccPXZ2Q9wxk7pDuku4xcy3pRH+Vhx+kn4l+Wc5z8eMIi/scX+Txo8H0uViXfx+QHpIeMXMtqWO+En6oueIMi2uRL/L4wetE1l4ER31PMG44L1S+yovND1Ou8EVeP/KQ5xmZEypf5UW+jlVRei+rwex9W1F8+cHXT5YfohfLyle2574ysF1H3r/NdhkmDZAGSf3Jsarp5HMbfOyUMs4Uc4jZ85Xtua8MQvrBeczidTKRHOvIWkcTjjFt+cr23FcGof0Q+4S2XtrVj6yYdemvVMrwg/fPS3v6kbmXdvUjK2Zd+iuB6C/L8IP3z39Y/P7Y1EurNUBXG1xi1qW/kpH/ryQ08vrQ1QZ1fWSBfFUM2Q9dbXD1o275SlAVP2Ty1Jssqp6vTPsRVfQjT73Josr5ir/71e1nm/a0u4Eq5yv+rlG3R2Xa0+4Gys5XTx3O/R/9CJWvnuQ4x/bul79jWE/z3kDaGKWP60yV81UWgzTvIdJwlD6uM675KvSer8w4zWEzaUuUPq4zrvc29J5vt+N6b0Pv+XY7uLfVoiq1AMSgFlSL0PnqGek56UW4KVSK0PnqJekV6XW4KVSK0PnqDekt6V24KVSK0PkKpPGdr+bhbSF856tb8KMQvvMV/CiG73y1AD8KEbq/AmnQXwEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABf+Aatd4iRAnAAA
+  </data>
+ </layer>
+ <layer name="background 3" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3YSwrCMBAA0OQEKvhZqIj3ENfieXpyT2AWLlpoLUjapPIeDATShpDQGTohAAAAAH2a0hsgC/cIwJAmqBPUaRVDWKfYxO54ar6Hfrt09vsUh9gdT8ldDDumsz+lOMfueC7bzM8t3epz9u0cNUe+GvMqvQGYyT3FbQFr1qCdr/pyVw7PFI8v89eR9y8/rAkwh3+tDUulNlCbGv4BoZRSfVz6lejjMqx0HxcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIKc3GEOLzkCcAAA=
+  </data>
+ </layer>
+ <layer name="overground" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3Yy0rDUBAG4OZFVLzhtbYu1IW6Vt//gZxCu8gihcRQZ06/DwbO4pSGHOZnTpbdYvEU9Ri1nGHN35zHO7zwHtO4ibO4dR5pyJlc5FUu8ioXeZXLlLw6if2nUWfOcXZT8uoy9l9FXTuP2U3Jq7vYfx/1MPJ3q6j1tnbWA3uP1SHnq6+o723tbNY/h/n7EsxXuZivcnEfzKVyXq3iuddRz11/XVnlvHqJ536Neuv668r25VX2e997PNdH1GfXX1e2L6+y3/ta7I99eTX13ncoLfZH5fmqxf6oPF+12B/mq1wq51WL/VE5r1rsj8p51WJ/VM6rFvujcl612B+V86rF/qiQV0PfcVvsjwp5NdQHLfbH2Lz6j2++Q33QYn+Mzavs33yrG5tX2b/5Vld5vmpRhfnqmFSYr46JvMpFXuUir3KRV7nIq1zkVS7yKhd5lYu8ykVeAQAAAAAAAAAAAAAAAAAAAAAAAAAAzOMXibIjo0CcAAA=
+  </data>
+ </layer>
+ <layer name="overground 2" width="100" height="100">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+3TuQ2AMBBFwXVHQP+NcEMnGMkJgQlxwIz0pQ03eREAAADwjTFvKpsb/0LEnneUnU0/4bbkrWVb41/QBwBtdSmizxvS8wb0AW/0AXX6gDp9QJ0+oE4fAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/MUFYYIjIECcAAA=
+  </data>
+ </layer>
+ <layer name="logic" width="100" height="100" visible="0" opacity="0.25">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA+2ciU7DMBAFyV+XsxWHgH41VNTCCj7WV/1CZySrSEnWu57YTltgt9zc7GhSrSf75ffVxT8sf89ZH7PksQ/kflj1V8rssVf1YY2NjzJ8H46ePhz4sOHG7N2L+9HJhx/zcflpLvZsH6/Lb0617W2Qj1zMWh+t/Ybo5aOlDpd3bQ0p/LG2nHOq4z5S40NBblv20VpDLqa1X1fH2l/NWoqPdMzY/X56Xftwa6/DX09H1zLCR2i+W+b6pX2U3luWubbut5RYTv7+vFvye7H/zBKLOaoG12cq5tZ9tKw/zqXv0TLXR8yPd8O9lLq31vlZGeWjJuYhkIvL7y4Sz1/HVbH4cPnPmB+x58LQtfuzi9M1sb1ktI9YviXNygwfpdfeZ+oa7aPVhbqPV+98y/qb20u27CM293rlaPER2idCPH+f8+S14z/00TqfcnFSPlw/1mcw63MJPsp9+H1Y95icDxcTH/E4n+e15WX5u9649nk+nuL5vD7518ViHg01tPjasg9/nqTe4+bmSOw7tFTMUeADH71zxIeWj9MeccwcT+0NoWtzMUfxH3yUtty931JzK/jAx4wc8aHrI7c3bN3H6Fpm5DjLx+0Gapk99pf0Eat55Fi05qbQRtPqIvY9b6ifltxU2mhifZXkt3aZ+3mLbMnHNdCy5tb0g480zA8t8KHFbB+h864ZNR/XDj60wIcW+NACH1rgQ4uaMcr9zrof95rfS9RQM0bWz/7wUc6lfcT+Ngh+aPUBfcGHFvjQwvr5KnvzZcCHFi0ueFbqD/e5FvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woQU+tMCHFvjQAh9a4EMLfGiBDy3woUXr/yOj9W9fIjI/i0CcAAA=
+  </data>
+ </layer>
+ <objectgroup name="trigger" width="100" height="100">
+  <object name="sg-1" type="teleport" x="2688" y="800" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="1152"/>
+    <property name="dest-y" value="288"/>
+   </properties>
+  </object>
+  <object name="eg-1" type="teleport" x="1120" y="224" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="2720"/>
+    <property name="dest-y" value="720"/>
+   </properties>
+  </object>
+  <object name="eg-3" type="teleport" x="1408" y="96" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="3008"/>
+    <property name="dest-y" value="592"/>
+   </properties>
+  </object>
+  <object name="eg-2" type="teleport" x="736" y="96" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="2336"/>
+    <property name="dest-y" value="592"/>
+   </properties>
+  </object>
+  <object name="sg-2" type="teleport" x="2304" y="672" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="768"/>
+    <property name="dest-y" value="160"/>
+   </properties>
+  </object>
+  <object name="sg-3" type="teleport" x="2976" y="672" width="64" height="32">
+   <properties>
+    <property name="dest-x" value="1440"/>
+    <property name="dest-y" value="160"/>
+   </properties>
+  </object>
+  <object name="stair" type="stair" x="2912" y="352" width="64" height="96"/>
+  <object name="go-desert" type="change-map" x="1040" y="1232" width="64" height="64">
+   <properties>
+    <property name="dest-map" value="desert.tmx"/>
+    <property name="dest-x" value="128"/>
+    <property name="dest-y" value="128"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -23,8 +23,8 @@
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.6</source>
-          <target>1.6</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
       <plugin>
@@ -48,6 +48,7 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <configuration>
+          <finalName>SlickBlogTutorial</finalName>
           <archive>
             <manifest>
               <mainClass>lesson7.MusicGame</mainClass>
@@ -73,7 +74,7 @@
         <version>2.4</version>
         <configuration>
           <descriptors>
-            <descriptor>distribution-64.xml</descriptor>
+            <descriptor>distribution.xml</descriptor>
           </descriptors>
           <appendAssemblyId>false</appendAssemblyId>
         </configuration>

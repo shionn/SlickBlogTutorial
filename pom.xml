@@ -14,7 +14,7 @@
   <repositories>
     <repository>
       <id>Slick2d</id>
-      <url>http://shionn.dyndns.org/archiva/repository/slick2d/</url>
+      <url>http://home.shionn.org/archiva/repository/slick2d/</url>
     </repository>
   </repositories>
 
@@ -22,6 +22,7 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
         <configuration>
           <source>1.7</source>
           <target>1.7</target>
@@ -47,6 +48,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>2.3.2</version>
         <configuration>
           <finalName>SlickBlogTutorial</finalName>
           <archive>
@@ -78,6 +80,11 @@
           </descriptors>
           <appendAssemblyId>false</appendAssemblyId>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.4.3</version>
       </plugin>
     </plugins>
   </build>

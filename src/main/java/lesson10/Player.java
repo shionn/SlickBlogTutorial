@@ -24,9 +24,15 @@ public class Player {
 
     private float x = 300, y = 300;
     private int direction = 2;
+    private boolean onStair = false;
     private boolean moving = false;
-
     private Animation[] animations = new Animation[8];
+
+    private Map map;
+
+    public Player(Map map) {
+        this.map = map;
+    }
 
     public void init() throws SlickException {
         SpriteSheet spriteSheet = new SpriteSheet("sprites/character.png", 64, 64);
@@ -52,6 +58,56 @@ public class Player {
         g.setColor(new Color(0, 0, 0, .5f));
         g.fillOval((int) x - 16, (int) y - 8, 32, 16);
         g.drawAnimation(animations[direction + (moving ? 4 : 0)], (int) x - 32, (int) y - 60);
+    }
+
+    public void update(int delta) {
+        if (this.moving) {
+            float futurX = getFuturX(delta);
+            float futurY = getFuturY(delta);
+            boolean collision = this.map.isCollision(futurX, futurY);
+            if (collision) {
+                this.moving = false;
+            } else {
+                this.x = futurX;
+                this.y = futurY;
+            }
+        }
+    }
+
+    private float getFuturX(int delta) {
+        float futurX = x;
+        switch (direction) {
+        case 1:
+            futurX = this.x - .1f * delta;
+            break;
+        case 3:
+            futurX = this.x + .1f * delta;
+            break;
+        }
+        return futurX;
+    }
+
+    private float getFuturY(int delta) {
+        float futurY = this.y;
+        switch (this.direction) {
+        case 0:
+            futurY = this.y - .1f * delta;
+            break;
+        case 2:
+            futurY = this.y + .1f * delta;
+            break;
+        case 1:
+            if (this.onStair) {
+                futurY = this.y + .1f * delta;
+            }
+            break;
+        case 3:
+            if (this.onStair) {
+                futurY = this.y - .1f * delta;
+            }
+            break;
+        }
+        return futurY;
     }
 
     public float getX() {
@@ -86,4 +142,11 @@ public class Player {
         this.moving = moving;
     }
 
+    public boolean isOnStair() {
+        return onStair;
+    }
+
+    public void setOnStair(boolean onStair) {
+        this.onStair = onStair;
+    }
 }

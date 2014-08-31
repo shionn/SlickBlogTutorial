@@ -1,4 +1,4 @@
-package lesson7;
+package lesson07;
 
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.AppGameContainer;

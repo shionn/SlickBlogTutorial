@@ -8,12 +8,12 @@ import org.newdawn.slick.SlickException;
  * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
  *         GCS d- s+:+ a+ C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y-
  */
-public class TriggerControler {
+public class TriggerController {
 
     private Map map;
     private Player player;
 
-    public TriggerControler(Map map, Player player) {
+    public TriggerController(Map map, Player player) {
         this.map = map;
         this.player = player;
     }

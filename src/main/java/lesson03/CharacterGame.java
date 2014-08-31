@@ -1,4 +1,4 @@
-package lesson4;
+package lesson03;
 
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.AppGameContainer;
@@ -19,23 +19,22 @@ import org.newdawn.slick.tiled.TiledMap;
  * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
  *         GCS d- s+:+ a C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y+
  */
-public class CameraGame extends BasicGame {
+public class CharacterGame extends BasicGame {
 
     private GameContainer container;
     private TiledMap map;
 
     private float x = 300, y = 300;
-    private float xCamera = x, yCamera = y;
     private int direction = 2;
     private boolean moving = false;
-    private final Animation[] animations = new Animation[8];
+    private Animation[] animations = new Animation[8];
 
     public static void main(String[] args) throws SlickException {
-        new AppGameContainer(new CameraGame(), 800, 600, false).start();
+        new AppGameContainer(new CharacterGame(), 800, 600, false).start();
     }
 
-    public CameraGame() {
-        super("Lesson 4 :: CameraGame");
+    public CharacterGame() {
+        super("Lesson 3 :: CharacterGame");
     }
 
     @Override
@@ -64,37 +63,14 @@ public class CameraGame extends BasicGame {
 
     @Override
     public void render(GameContainer container, Graphics g) throws SlickException {
-        g.translate(container.getWidth() / 2 - (int) xCamera, container.getHeight() / 2
-                - (int) yCamera);
-
         this.map.render(0, 0);
         g.setColor(new Color(0, 0, 0, .5f));
-        g.fillOval((int) x - 16, (int) y - 8, 32, 16);
-        g.drawAnimation(animations[direction + (moving ? 4 : 0)], (int) x - 32, (int) y - 60);
+        g.fillOval(x - 16, y - 8, 32, 16);
+        g.drawAnimation(animations[direction + (moving ? 4 : 0)], x - 32, y - 60);
     }
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
-        updateCharacter(delta);
-        updateCamera(container);
-    }
-
-    private void updateCamera(GameContainer container) {
-        int w = container.getWidth() / 4;
-        if (this.x > this.xCamera + w) {
-            this.xCamera = this.x - w;
-        } else if (this.x < this.xCamera - w) {
-            this.xCamera = this.x + w;
-        }
-        int h = container.getHeight() / 4;
-        if (this.y > this.yCamera + h) {
-            this.yCamera = this.y - h;
-        } else if (this.y < this.yCamera - h) {
-            this.yCamera = this.y + h;
-        }
-    }
-
-    private void updateCharacter(int delta) {
         if (this.moving) {
             switch (this.direction) {
             case 0:

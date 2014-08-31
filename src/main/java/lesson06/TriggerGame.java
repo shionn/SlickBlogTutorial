@@ -1,4 +1,4 @@
-package lesson5;
+package lesson06;
 
 import org.newdawn.slick.Animation;
 import org.newdawn.slick.AppGameContainer;
@@ -20,7 +20,7 @@ import org.newdawn.slick.tiled.TiledMap;
  * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
  *         GCS d- s+:+ a C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y+
  */
-public class CollisionGame extends BasicGame {
+public class TriggerGame extends BasicGame {
 
     private GameContainer container;
     private TiledMap map;
@@ -30,19 +30,20 @@ public class CollisionGame extends BasicGame {
     private int direction = 2;
     private boolean moving = false;
     private final Animation[] animations = new Animation[8];
+    private boolean onStair;
 
     public static void main(String[] args) throws SlickException {
-        new AppGameContainer(new CollisionGame(), 800, 600, false).start();
+        new AppGameContainer(new TriggerGame(), 800, 600, false).start();
     }
 
-    public CollisionGame() {
-        super("Lesson 5 :: CollisionGame");
+    public TriggerGame() {
+        super("Lesson 6 :: TriggerGame");
     }
 
     @Override
     public void init(GameContainer container) throws SlickException {
         this.container = container;
-        this.map = new TiledMap("map/exemple-collision.tmx");
+        this.map = new TiledMap("map/exemple-avec-grotte.tmx");
 
         SpriteSheet spriteSheet = new SpriteSheet("sprites/character.png", 64, 64);
         this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
@@ -79,8 +80,36 @@ public class CollisionGame extends BasicGame {
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
+        updateTrigger();
         updateCharacter(delta);
         updateCamera(container);
+    }
+
+    private void updateTrigger() {
+        this.onStair = false;
+        for (int objectID = 0; objectID < this.map.getObjectCount(0); objectID++) {
+            if (isInTrigger(objectID)) {
+                if ("teleport".equals(this.map.getObjectType(0, objectID))) {
+                    teleport(objectID);
+                } else if ("stair".equals(this.map.getObjectType(0, objectID))) {
+                    this.onStair = true;
+                }
+            }
+        }
+    }
+
+    private boolean isInTrigger(int id) {
+        return this.x > this.map.getObjectX(0, id)
+                && this.x < this.map.getObjectX(0, id) + this.map.getObjectWidth(0, id)
+                && this.y > this.map.getObjectY(0, id)
+                && this.y < this.map.getObjectY(0, id) + this.map.getObjectHeight(0, id);
+    }
+
+    private void teleport(int objectID) {
+        this.x = Float.parseFloat(this.map.getObjectProperty(0, objectID, "dest-x",
+                Float.toString(x)));
+        this.y = Float.parseFloat(this.map.getObjectProperty(0, objectID, "dest-y",
+                Float.toString(y)));
     }
 
     private void updateCamera(GameContainer container) {
@@ -147,6 +176,16 @@ public class CollisionGame extends BasicGame {
         case 2:
             futurY = this.y + .1f * delta;
             break;
+        case 1:
+            if (this.onStair) {
+                futurY = this.y + .1f * delta;
+            }
+            break;
+        case 3:
+            if (this.onStair) {
+                futurY = this.y - .1f * delta;
+            }
+
         }
         return futurY;
     }

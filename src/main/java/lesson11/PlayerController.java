@@ -9,11 +9,11 @@ import org.newdawn.slick.KeyListener;
  * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
  *         GCS d- s+:+ a+ C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y-
  */
-public class PlayerControler implements KeyListener {
+public class PlayerController implements KeyListener {
 
     private Player player;
 
-    public PlayerControler(Player player) {
+    public PlayerController(Player player) {
         this.player = player;
     }
 

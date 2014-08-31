@@ -48,9 +48,8 @@ public class AnalogGame extends BasicGame {
         this.map.init();
         this.player.init();
         this.hud.init();
-        this.controller.init(container.getInput());
+        this.controller.setInput(container.getInput());
         container.getInput().addKeyListener(controller);
-        container.getInput().addControllerListener(controller);
     }
 
     @Override

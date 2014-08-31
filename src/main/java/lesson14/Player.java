@@ -75,40 +75,14 @@ public class Player {
     }
 
     private float getFuturX(int delta) {
-        float futurX = x;
-        switch (getDirection()) {
-        case 1:
-            futurX = this.x - .1f * delta;
-            break;
-        case 3:
-            futurX = this.x + .1f * delta;
-            break;
-        }
-        futurX = this.x + .1f * delta * dx;
-        return futurX;
+        return this.x + .15f * delta * dx;
     }
 
     private float getFuturY(int delta) {
-        float futurY = this.y;
-        switch (getDirection()) {
-        case 0:
-            futurY = this.y - .1f * delta;
-            break;
-        case 2:
-            futurY = this.y + .1f * delta;
-            break;
-        case 1:
-            if (this.onStair) {
-                futurY = this.y + .1f *dx * delta;
-            }
-            break;
-        case 3:
-            if (this.onStair) {
-                futurY = this.y + .1f * dx* delta;
-            }
-            break;
+        float futurY = this.y + .15f * delta * dy;
+        if (this.onStair) {
+            futurY = futurY - .15f * dx * delta;
         }
-        futurY = this.y + .1f * delta * dy;
         return futurY;
     }
 
@@ -136,7 +110,7 @@ public class Player {
             direction = 1;
         } else if (dy < 0) {
             direction = 0;
-        } else {
+        } else if (dy > 0) {
             direction = 2;
         }
         return direction;
@@ -144,26 +118,11 @@ public class Player {
 
     public void setDirection(int direction) {
         switch (direction) {
-        case 0:
-            dx = 0;
-            dy = -1;
-            break;
-        case 1:
-            dx = -1;
-            dy = 0;
-            break;
-        case 2:
-            dx = 0;
-            dy = 1;
-            break;
-        case 3:
-            dx = 1;
-            dy = 0;
-            break;
-        default:
-            dx = 0;
-            dy = 0;
-            break;
+        case 0:  dx =  0; dy = -1; break;
+        case 1:  dx = -1; dy =  0; break;
+        case 2:  dx =  0; dy =  1; break;
+        case 3:  dx =  1; dy =  0; break;
+        default: dx =  0; dy =  0; break;
         }
     }
 

@@ -30,6 +30,7 @@ public class HudGame extends BasicGame {
     private TriggerController triggers = new TriggerController(map, player);
     private Camera camera = new Camera(player);
     private Hud hud = new Hud();
+    private PlayerController controller = new PlayerController(this.player);
 
     public static void main(String[] args) throws SlickException {
         new AppGameContainer(new HudGame(), 800, 600, false).start();
@@ -47,7 +48,6 @@ public class HudGame extends BasicGame {
         this.map.init();
         this.player.init();
         this.hud.init();
-        PlayerController controller = new PlayerController(this.player);
         container.getInput().addKeyListener(controller);
         container.getInput().addControllerListener(controller);
     }

@@ -29,6 +29,7 @@ public class ControllerGame extends BasicGame {
     private Player player = new Player(map);
     private TriggerController triggers = new TriggerController(map, player);
     private Camera camera = new Camera(player);
+    private PlayerController controller = new PlayerController(this.player);
 
     public static void main(String[] args) throws SlickException {
         new AppGameContainer(new ControllerGame(), 800, 600, false).start();
@@ -45,7 +46,6 @@ public class ControllerGame extends BasicGame {
         background.loop();
         this.map.init();
         this.player.init();
-        PlayerController controller = new PlayerController(this.player);
         container.getInput().addKeyListener(controller);
         container.getInput().addControllerListener(controller);
     }

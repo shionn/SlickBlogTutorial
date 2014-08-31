@@ -29,6 +29,7 @@ public class AnalogGame extends BasicGame {
     private Player player = new Player(map);
     private TriggerController triggers = new TriggerController(map, player);
     private Camera camera = new Camera(player);
+    private PlayerController controller = new PlayerController(player);
     private Hud hud = new Hud();
 
     public static void main(String[] args) throws SlickException {
@@ -47,7 +48,7 @@ public class AnalogGame extends BasicGame {
         this.map.init();
         this.player.init();
         this.hud.init();
-        PlayerController controller = new PlayerController(this.player);
+        this.controller.init(container.getInput());
         container.getInput().addKeyListener(controller);
         container.getInput().addControllerListener(controller);
     }
@@ -63,6 +64,7 @@ public class AnalogGame extends BasicGame {
 
     @Override
     public void update(GameContainer container, int delta) throws SlickException {
+        this.controller.update();
         this.triggers.update();
         this.player.update(delta);
         this.camera.update(container);

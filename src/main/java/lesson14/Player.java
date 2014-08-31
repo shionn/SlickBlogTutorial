@@ -84,6 +84,7 @@ public class Player {
             futurX = this.x + .1f * delta;
             break;
         }
+        futurX = this.x + .1f * delta * dx;
         return futurX;
     }
 
@@ -98,15 +99,16 @@ public class Player {
             break;
         case 1:
             if (this.onStair) {
-                futurY = this.y + .1f * delta;
+                futurY = this.y + .1f *dx * delta;
             }
             break;
         case 3:
             if (this.onStair) {
-                futurY = this.y - .1f * delta;
+                futurY = this.y + .1f * dx* delta;
             }
             break;
         }
+        futurY = this.y + .1f * delta * dy;
         return futurY;
     }
 
@@ -132,7 +134,7 @@ public class Player {
             direction = 3;
         } else if (dx < 0 && -dx >= Math.abs(dy)) {
             direction = 1;
-        } else if (dy > 0) {
+        } else if (dy < 0) {
             direction = 0;
         } else {
             direction = 2;
@@ -144,7 +146,7 @@ public class Player {
         switch (direction) {
         case 0:
             dx = 0;
-            dy = 1;
+            dy = -1;
             break;
         case 1:
             dx = -1;
@@ -152,7 +154,7 @@ public class Player {
             break;
         case 2:
             dx = 0;
-            dy = -1;
+            dy = 1;
             break;
         case 3:
             dx = 1;

@@ -13,9 +13,21 @@ import org.newdawn.slick.KeyListener;
 public class PlayerController implements KeyListener, ControllerListener {
 
     private Player player;
+    private Input input;
 
     public PlayerController(Player player) {
         this.player = player;
+    }
+    
+    public void update() {
+        if (input.getControllerCount()>0) {
+            player.setDx(input.getAxisValue(0, 1));
+            player.setDy(input.getAxisValue(0, 2));
+        }
+    }
+
+    public void init(Input input) {
+        this.input = input;
     }
 
     @Override
@@ -115,5 +127,6 @@ public class PlayerController implements KeyListener, ControllerListener {
     @Override
     public void controllerButtonReleased(int controller, int button) {
     }
+
 
 }

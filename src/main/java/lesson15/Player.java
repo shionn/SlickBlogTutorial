@@ -26,6 +26,7 @@ public class Player {
     private boolean onStair = false;
     private Animation[] animations = new Animation[8];
     private float dx = 0, dy = 0;
+    private int direction;
 
     private Map map;
 
@@ -56,12 +57,13 @@ public class Player {
     public void render(Graphics g) {
         g.setColor(new Color(0, 0, 0, .5f));
         g.fillOval((int) x - 16, (int) y - 8, 32, 16);
-        g.drawAnimation(animations[getDirection() + (isMoving() ? 4 : 0)], (int) x - 32,
+        g.drawAnimation(animations[direction + (isMoving() ? 4 : 0)], (int) x - 32,
                 (int) y - 60);
     }
 
     public void update(int delta) {
         if (this.isMoving()) {
+            updateDirection();
             float futurX = getFuturX(delta);
             float futurY = getFuturY(delta);
             boolean collision = this.map.isCollision(futurX, futurY);
@@ -102,8 +104,10 @@ public class Player {
         this.y = y;
     }
 
-    public int getDirection() {
-        int direction = 0;
+    /**
+     * mise à jour de la direction en fonction du vecteur de déplacement
+     */
+    private void updateDirection() {
         if (dx > 0 && dx >= Math.abs(dy)) {
             direction = 3;
         } else if (dx < 0 && -dx >= Math.abs(dy)) {
@@ -113,7 +117,6 @@ public class Player {
         } else if (dy > 0) {
             direction = 2;
         }
-        return direction;
     }
 
     public void setDirection(int direction) {

@@ -14,7 +14,7 @@ import org.newdawn.slick.state.StateBasedGame;
  * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
  *         GCS d- s+:+ a+ C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y-
  */
-public class TutoGameState extends BasicGameState {
+public class MapGameState extends BasicGameState {
     public static final int ID = 2;
 
     private GameContainer container;

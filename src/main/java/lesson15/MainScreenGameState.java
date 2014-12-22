@@ -46,7 +46,7 @@ public class MainScreenGameState extends BasicGameState {
      */
     @Override
     public void keyReleased(int key, char c) {
-        game.enterState(TutoGameState.ID);
+        game.enterState(MapGameState.ID);
     }
 
     /**

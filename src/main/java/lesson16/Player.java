@@ -20,7 +20,7 @@ import org.newdawn.slick.SpriteSheet;
  * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
  *         GCS d- s+:+ a C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y+
  */
-public class MapPlayer {
+public class Player {
 
     private float x = 300, y = 300;
     private boolean onStair = false;
@@ -30,7 +30,7 @@ public class MapPlayer {
 
     private Map map;
 
-    public MapPlayer(Map map) {
+    public Player(Map map) {
         this.map = map;
     }
 

@@ -14,10 +14,10 @@ import org.newdawn.slick.Graphics;
  */
 public class Camera {
 
-    private MapPlayer player;
+    private Player player;
     private float xCamera, yCamera;
 
-    public Camera(MapPlayer player) {
+    public Camera(Player player) {
         this.player = player;
         this.xCamera = player.getX();
         this.yCamera = player.getY();

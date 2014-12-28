@@ -2,6 +2,7 @@ package lesson16;
 
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
@@ -16,16 +17,25 @@ public class BattleGameState extends BasicGameState {
 
     public static final int ID = 3;
     private StateBasedGame game;
+    private Image background;
+    private Image ennemy;
+    private Image hero;
 
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
         this.game = game;
-        
+        this.background = new Image("background/battle.png");
+        this.ennemy = new Image("battle/gobelin.png").getScaledCopy(2);
+        this.hero = new Image("battle/hero.png").getScaledCopy(2);
+
     }
 
     @Override
     public void render(GameContainer container, StateBasedGame game, Graphics g)
             throws SlickException {
+        background.draw(0, 0, container.getWidth(), container.getHeight());
+        hero.drawCentered(container.getWidth() * 1 / 4, container.getHeight() / 2);
+        ennemy.drawCentered(container.getWidth() * 3 / 4, container.getHeight() / 2);
     }
 
     @Override
@@ -34,7 +44,7 @@ public class BattleGameState extends BasicGameState {
     }
 
     @Override
-    public void keyReleased(int key, char c) {
+    public void keyPressed(int key, char c) {
         game.enterState(MapGameState.ID);
     }
 

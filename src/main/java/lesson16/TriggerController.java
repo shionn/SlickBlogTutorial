@@ -11,9 +11,9 @@ import org.newdawn.slick.SlickException;
 public class TriggerController {
 
     private Map map;
-    private MapPlayer player;
+    private Player player;
 
-    public TriggerController(Map map, MapPlayer player) {
+    public TriggerController(Map map, Player player) {
         this.map = map;
         this.player = player;
     }

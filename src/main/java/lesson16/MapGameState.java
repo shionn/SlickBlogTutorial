@@ -19,10 +19,10 @@ public class MapGameState extends BasicGameState {
 
     private GameContainer container;
     private Map map = new Map();
-    private MapPlayer player = new MapPlayer(map);
+    private Player player = new Player(map);
     private TriggerController triggers = new TriggerController(map, player);
     private Camera camera = new Camera(player);
-    private MapPlayerController controller = new MapPlayerController(player);
+    private PlayerController controller = new PlayerController(player);
     private Hud hud = new Hud();
 
     @Override
@@ -54,7 +54,7 @@ public class MapGameState extends BasicGameState {
         this.triggers.update();
         this.player.update(delta);
         this.camera.update(container);
-        if (Math.random() < 0.001) {
+        if (Math.random() < 0.001 && player.isMoving()) {
             game.enterState(BattleGameState.ID);
         }
     }

@@ -33,8 +33,8 @@ public class BattleGameState extends BasicGameState {
     public void render(GameContainer container, StateBasedGame game, Graphics g)
             throws SlickException {
         this.background.draw(0, 0, container.getWidth(), container.getHeight());
-        this.player.render(container);
-        this.ennemy.render(container);
+        this.player.render(container, g);
+        this.ennemy.render(container, g);
     }
 
     @Override

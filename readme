@@ -1,13 +1,16 @@
 Code source d'une serie de tutoriaux paru sur www.shionn.org
-- lecon 1 : creer une application slick
-- lecon 2 : afficher une carte
-- lecon 3 : annimer et deplacer un personnage
-- lecon 4 : camera
-- lecon 5 : collision
-- lecon 6 : trigger
-- lecon 7 : musique
-- lecon 8 : packaging
-- lecon 9 : changement de carte
-- lecon 10 & 11 : Convertion à l'objet
-- lecon 12 : utiliser un joystick
-- lecon 13 : afficher un hud
+- leçon 1 : creer une application slick
+- leçon 2 : afficher une carte
+- leçon 3 : annimer et deplacer un personnage
+- leçon 4 : camera
+- leçon 5 : collision
+- leçon 6 : trigger
+- leçon 7 : musique
+- leçon 8 : packaging
+- leçon 9 : changement de carte
+- leçon 10 & 11 : Convertion à l'objet
+- leçon 12 : utiliser un joystick
+- leçon 13 : afficher un hud
+- leçon 14 : deplacement analogique
+- leçon 15 : afficher un ecran titre
+- leçon 16 & 17 : combat au tour par tour

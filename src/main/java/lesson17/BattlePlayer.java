@@ -30,4 +30,12 @@ public class BattlePlayer {
                 container.getHeight() / 2 - hero.getHeight() / 2 - font.getLineHeight(), text,
                 Color.white);
     }
+
+    public int getPv() {
+        return pv;
+    }
+
+    public void setPv(int pv) {
+        this.pv = pv;
+    }
 }

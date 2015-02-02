@@ -54,7 +54,7 @@ public class MapGameState extends BasicGameState {
         this.triggers.update();
         this.player.update(delta);
         this.camera.update(container);
-        if (Math.random() < 0.001 && player.isMoving()) {
+        if (Math.random() < 0.01 && player.isMoving()) {
             game.enterState(BattleGameState.ID);
         }
     }

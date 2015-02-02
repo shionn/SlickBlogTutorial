@@ -16,17 +16,17 @@ import org.newdawn.slick.state.StateBasedGame;
 public class BattleGameState extends BasicGameState {
 
     public static final int ID = 3;
-    private StateBasedGame game;
     private Image background;
     private BattleEnnemy ennemy = new BattleEnnemy();
     private BattlePlayer player = new BattlePlayer();
 
     @Override
     public void init(GameContainer container, StateBasedGame game) throws SlickException {
-        this.game = game;
         this.background = new Image("background/battle.png");
         this.ennemy.init();
         this.player.init();
+        BattleController controller = new BattleController(player, ennemy, game);
+        container.getInput().addKeyListener(controller);
     }
 
     @Override
@@ -43,9 +43,7 @@ public class BattleGameState extends BasicGameState {
     }
 
     @Override
-    public void keyPressed(int key, char c) {
-        game.enterState(MapGameState.ID);
-    }
+    public void keyPressed(int key, char c) { }
 
     @Override
     public int getID() {

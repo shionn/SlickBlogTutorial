@@ -29,4 +29,12 @@ public class BattleEnnemy {
                 container.getHeight() / 2 - ennemy.getHeight() / 2 - font.getLineHeight(), text,
                 Color.white);
     }
+
+    public void setPv(int pv) {
+        this.pv = pv;
+    }
+
+    public int getPv() {
+        return pv;
+    }
 }

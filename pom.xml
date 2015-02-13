@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>shionn.tuto</groupId>
   <artifactId>SlickBlogTutorial</artifactId>
-  <version>0.17</version>
+  <version>0.18</version>
   <name>SlickBlogTutorial</name>
   <description>Serie de tutoriaux Slick pour le blog shionn.org</description>
 
@@ -14,7 +14,7 @@
   <repositories>
     <repository>
       <id>Slick2d</id>
-      <url>http://home.shionn.org/archiva/repository/slick2d/</url>
+      <url>http://shionn.noip.me/archiva/repository/slick2d/</url>
     </repository>
   </repositories>
 

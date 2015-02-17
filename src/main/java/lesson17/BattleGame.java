@@ -21,23 +21,23 @@ import org.newdawn.slick.state.StateBasedGame;
  */
 public class BattleGame extends StateBasedGame {
 
-    public static void main(String[] args) throws SlickException {
-        new AppGameContainer(new BattleGame(), 800, 600, false).start();
-    }
+	public static void main(String[] args) throws SlickException {
+		new AppGameContainer(new BattleGame(), 800, 600, false).start();
+	}
 
-    public BattleGame() {
-        super("Lesson 17 :: BattleGame");
-    }
+	public BattleGame() {
+		super("Lesson 17 :: BattleGame");
+	}
 
-    /**
-     * Ici il suffit d'ajouter nos boucles de jeux. La première ajoutèe sera celle qui sera utilisée
-     * au début
-     */
-    @Override
-    public void initStatesList(GameContainer container) throws SlickException {
-        addState(new MainScreenGameState());
-        addState(new MapGameState());
-        addState(new BattleGameState());
-    }
+	/**
+	 * Ici il suffit d'ajouter nos boucles de jeux. La première ajoutèe sera celle qui sera utilisée
+	 * au début
+	 */
+	@Override
+	public void initStatesList(GameContainer container) throws SlickException {
+		addState(new MainScreenGameState());
+		addState(new MapGameState());
+		addState(new BattleGameState());
+	}
 
 }

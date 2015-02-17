@@ -14,27 +14,27 @@ import org.newdawn.slick.SlickException;
  *         GCS d- s+:+ a+ C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y+
  */
 public class BattleEnnemy {
-    private int pv = 12;
-    private Image ennemy;
+	private int pv = 12;
+	private Image ennemy;
 
-    public void init() throws SlickException {
-        this.ennemy = new Image("battle/gobelin.png").getScaledCopy(2);
-    }
+	public void init() throws SlickException {
+		this.ennemy = new Image("battle/gobelin.png").getScaledCopy(2);
+	}
 
-    public void render(GameContainer container, Graphics g) {
-        this.ennemy.drawCentered(container.getWidth() * 3 / 4, container.getHeight() / 2);
-        Font font = g.getFont();
-        String text = Integer.toString(pv);
-        font.drawString(container.getWidth() * 3 / 4 - font.getWidth(text) / 2,
-                container.getHeight() / 2 - ennemy.getHeight() / 2 - font.getLineHeight(), text,
-                Color.white);
-    }
+	public void render(GameContainer container, Graphics g) {
+		this.ennemy.drawCentered(container.getWidth() * 3 / 4, container.getHeight() / 2);
+		Font font = g.getFont();
+		String text = Integer.toString(pv);
+		font.drawString(container.getWidth() * 3 / 4 - font.getWidth(text) / 2,
+				container.getHeight() / 2 - ennemy.getHeight() / 2 - font.getLineHeight(), text,
+				Color.white);
+	}
 
-    public void setPv(int pv) {
-        this.pv = pv;
-    }
+	public void setPv(int pv) {
+		this.pv = pv;
+	}
 
-    public int getPv() {
-        return pv;
-    }
+	public int getPv() {
+		return pv;
+	}
 }

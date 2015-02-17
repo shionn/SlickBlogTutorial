@@ -14,33 +14,33 @@ import org.newdawn.slick.Graphics;
  */
 public class MapCamera {
 
-    private MapPlayer player;
-    private float xCamera, yCamera;
+	private MapPlayer player;
+	private float xCamera, yCamera;
 
-    public MapCamera(MapPlayer player) {
-        this.player = player;
-        this.xCamera = player.getX();
-        this.yCamera = player.getY();
-    }
+	public MapCamera(MapPlayer player) {
+		this.player = player;
+		this.xCamera = player.getX();
+		this.yCamera = player.getY();
+	}
 
-    public void place(GameContainer container, Graphics g) {
-        g.translate(container.getWidth() / 2 - (int) this.xCamera, container.getHeight() / 2
-                - (int) this.yCamera);
-    }
+	public void place(GameContainer container, Graphics g) {
+		g.translate(container.getWidth() / 2 - (int) this.xCamera, container.getHeight() / 2
+				- (int) this.yCamera);
+	}
 
-    public void update(GameContainer container) {
-        int w = container.getWidth() / 4;
-        if (this.player.getX() > this.xCamera + w) {
-            this.xCamera = this.player.getX() - w;
-        } else if (this.player.getX() < this.xCamera - w) {
-            this.xCamera = this.player.getX() + w;
-        }
-        int h = container.getHeight() / 4;
-        if (this.player.getY() > this.yCamera + h) {
-            this.yCamera = this.player.getY() - h;
-        } else if (this.player.getY() < this.yCamera - h) {
-            this.yCamera = this.player.getY() + h;
-        }
-    }
+	public void update(GameContainer container) {
+		int w = container.getWidth() / 4;
+		if (this.player.getX() > this.xCamera + w) {
+			this.xCamera = this.player.getX() - w;
+		} else if (this.player.getX() < this.xCamera - w) {
+			this.xCamera = this.player.getX() + w;
+		}
+		int h = container.getHeight() / 4;
+		if (this.player.getY() > this.yCamera + h) {
+			this.yCamera = this.player.getY() - h;
+		} else if (this.player.getY() < this.yCamera - h) {
+			this.yCamera = this.player.getY() + h;
+		}
+	}
 
 }

@@ -15,41 +15,41 @@ import org.newdawn.slick.state.StateBasedGame;
  */
 public class BattleGameState extends BasicGameState {
 
-    public static final int ID = 3;
-    private StateBasedGame game;
-    private Image background;
-    private Image ennemy;
-    private Image hero;
+	public static final int ID = 3;
+	private StateBasedGame game;
+	private Image background;
+	private Image ennemy;
+	private Image hero;
 
-    @Override
-    public void init(GameContainer container, StateBasedGame game) throws SlickException {
-        this.game = game;
-        this.background = new Image("background/battle.png");
-        this.ennemy = new Image("battle/gobelin.png").getScaledCopy(2);
-        this.hero = new Image("battle/hero.png").getScaledCopy(2);
+	@Override
+	public void init(GameContainer container, StateBasedGame game) throws SlickException {
+		this.game = game;
+		this.background = new Image("background/battle.png");
+		this.ennemy = new Image("battle/gobelin.png").getScaledCopy(2);
+		this.hero = new Image("battle/hero.png").getScaledCopy(2);
 
-    }
+	}
 
-    @Override
-    public void render(GameContainer container, StateBasedGame game, Graphics g)
-            throws SlickException {
-        background.draw(0, 0, container.getWidth(), container.getHeight());
-        hero.drawCentered(container.getWidth() * 1 / 4, container.getHeight() / 2);
-        ennemy.drawCentered(container.getWidth() * 3 / 4, container.getHeight() / 2);
-    }
+	@Override
+	public void render(GameContainer container, StateBasedGame game, Graphics g)
+			throws SlickException {
+		background.draw(0, 0, container.getWidth(), container.getHeight());
+		hero.drawCentered(container.getWidth() * 1 / 4, container.getHeight() / 2);
+		ennemy.drawCentered(container.getWidth() * 3 / 4, container.getHeight() / 2);
+	}
 
-    @Override
-    public void update(GameContainer container, StateBasedGame game, int delta)
-            throws SlickException {
-    }
+	@Override
+	public void update(GameContainer container, StateBasedGame game, int delta)
+			throws SlickException {
+	}
 
-    @Override
-    public void keyPressed(int key, char c) {
-        game.enterState(MapGameState.ID);
-    }
+	@Override
+	public void keyPressed(int key, char c) {
+		game.enterState(MapGameState.ID);
+	}
 
-    @Override
-    public int getID() {
-        return ID;
-    }
+	@Override
+	public int getID() {
+		return ID;
+	}
 }

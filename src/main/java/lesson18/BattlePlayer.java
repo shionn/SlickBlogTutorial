@@ -15,27 +15,27 @@ import org.newdawn.slick.SlickException;
  */
 public class BattlePlayer {
 
-    private int pv = 50;
-    private Image hero;
+	private int pv = 50;
+	private Image hero;
 
-    public void init() throws SlickException {
-        this.hero = new Image("battle/hero.png").getScaledCopy(2);
-    }
+	public void init() throws SlickException {
+		this.hero = new Image("battle/hero.png").getScaledCopy(2);
+	}
 
-    public void render(GameContainer container, Graphics g) {
-        hero.drawCentered(container.getWidth() * 1 / 4, container.getHeight() / 2);
-        Font font = g.getFont();
-        String text = Integer.toString(pv);
-        font.drawString(container.getWidth() * 1 / 4 - font.getWidth(text) / 2,
-                container.getHeight() / 2 - hero.getHeight() / 2 - font.getLineHeight(), text,
-                Color.white);
-    }
+	public void render(GameContainer container, Graphics g) {
+		hero.drawCentered(container.getWidth() * 1 / 4, container.getHeight() / 2);
+		Font font = g.getFont();
+		String text = Integer.toString(pv);
+		font.drawString(container.getWidth() * 1 / 4 - font.getWidth(text) / 2,
+				container.getHeight() / 2 - hero.getHeight() / 2 - font.getLineHeight(), text,
+				Color.white);
+	}
 
-    public int getPv() {
-        return pv;
-    }
+	public int getPv() {
+		return pv;
+	}
 
-    public void setPv(int pv) {
-        this.pv = pv;
-    }
+	public void setPv(int pv) {
+		this.pv = pv;
+	}
 }

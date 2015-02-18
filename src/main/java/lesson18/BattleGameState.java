@@ -3,7 +3,10 @@ package lesson18;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.command.InputProvider;
+import org.newdawn.slick.command.KeyControl;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -25,8 +28,12 @@ public class BattleGameState extends BasicGameState {
 		this.background = new Image("background/battle.png");
 		this.ennemy.init();
 		this.player.init();
-		BattleController controller = new BattleController(player, ennemy, game);
-		container.getInput().addKeyListener(controller);
+
+		InputProvider inputProvider = new InputProvider(container.getInput());
+		inputProvider.bindCommand(new KeyControl(Input.KEY_A), BattleCommand.ATTACK);
+		inputProvider.bindCommand(new KeyControl(Input.KEY_D), BattleCommand.DEFEND);
+		inputProvider.bindCommand(new KeyControl(Input.KEY_F), BattleCommand.FLEE);
+		inputProvider.addListener(new BattleController(player, ennemy, game));
 	}
 
 	@Override

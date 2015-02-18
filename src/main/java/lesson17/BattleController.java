@@ -2,8 +2,8 @@ package lesson17;
 
 import java.util.Random;
 
-import org.newdawn.slick.Input;
-import org.newdawn.slick.KeyListener;
+import org.newdawn.slick.command.Command;
+import org.newdawn.slick.command.InputProviderListener;
 import org.newdawn.slick.state.StateBasedGame;
 
 /**
@@ -12,35 +12,40 @@ import org.newdawn.slick.state.StateBasedGame;
  * @author <b>Shionn</b>, shionn@gmail.com <i>http://shionn.org</i><br>
  *         GCS d- s+:+ a+ C++ UL/M P L+ E--- W++ N K- w-- M+ t+ 5 X R+ !tv b+ D+ G- e+++ h+ r- y+
  */
-public class BattleController implements KeyListener {
+public class BattleController implements InputProviderListener {
 
 	private BattlePlayer player;
 	private BattleEnnemy ennemy;
 	private StateBasedGame game;
 	private Random random = new Random();
 
-	public BattleController(BattlePlayer player, BattleEnnemy ennemy, StateBasedGame game) {
+	public BattleController(BattlePlayer player, BattleEnnemy ennemy,
+			StateBasedGame game) {
 		this.player = player;
 		this.ennemy = ennemy;
 		this.game = game;
 	}
 
-	/**
-	 * on redirige vers la bonne méthode en fonction de la touche préssé
-	 */
 	@Override
-	public void keyReleased(int key, char c) {
-		switch (c) {
-		case 'a':
+	public void controlPressed(Command command) {
+		switch ((BattleCommand) command) {
+		case ATTACK:
 			attack();
 			break;
-		case 'd':
+		case DEFEND:
 			defend();
 			break;
-		case 'f':
+		case FLEE:
 			flee();
 			break;
+
+		default:
+			break;
 		}
+	}
+
+	@Override
+	public void controlReleased(Command command) {
 	}
 
 	/**
@@ -103,25 +108,6 @@ public class BattleController implements KeyListener {
 		}
 	}
 
-	@Override
-	public boolean isAcceptingInput() {
-		return true;
-	}
 
-	@Override
-	public void setInput(Input input) {
-	}
-
-	@Override
-	public void inputEnded() {
-	}
-
-	@Override
-	public void inputStarted() {
-	}
-
-	@Override
-	public void keyPressed(int key, char c) {
-	}
 
 }

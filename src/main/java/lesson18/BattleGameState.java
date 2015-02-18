@@ -1,5 +1,8 @@
 package lesson18;
 
+import lesson17.BattleEnnemy;
+import lesson17.BattlePlayer;
+
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -29,11 +32,11 @@ public class BattleGameState extends BasicGameState {
 		this.ennemy.init();
 		this.player.init();
 
-		InputProvider inputProvider = new InputProvider(container.getInput());
-		inputProvider.bindCommand(new KeyControl(Input.KEY_A), BattleCommand.ATTACK);
-		inputProvider.bindCommand(new KeyControl(Input.KEY_D), BattleCommand.DEFEND);
-		inputProvider.bindCommand(new KeyControl(Input.KEY_F), BattleCommand.FLEE);
-		inputProvider.addListener(new BattleController(player, ennemy, game));
+		InputProvider provider = new InputProvider(container.getInput());
+		provider.bindCommand(new KeyControl(Input.KEY_A), BattleCommand.ATTACK);
+		provider.bindCommand(new KeyControl(Input.KEY_D), BattleCommand.DEFEND);
+		provider.bindCommand(new KeyControl(Input.KEY_F), BattleCommand.FLEE);
+		provider.addListener(new BattleController(player, ennemy, game));
 	}
 
 	@Override

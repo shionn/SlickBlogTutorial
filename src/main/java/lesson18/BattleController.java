@@ -2,6 +2,11 @@ package lesson18;
 
 import java.util.Random;
 
+import lesson17.BattleEnnemy;
+import lesson17.BattlePlayer;
+import lesson17.MainScreenGameState;
+import lesson17.MapGameState;
+
 import org.newdawn.slick.command.Command;
 import org.newdawn.slick.command.InputProviderListener;
 import org.newdawn.slick.state.StateBasedGame;

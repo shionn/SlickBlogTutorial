@@ -6,6 +6,10 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Vector2f;
+
+import shionn.slick.animation.BezierPath;
+import shionn.slick.animation.PathAnimation;
 
 /**
  * Code sous licence GPLv3 (http://www.gnu.org/licenses/gpl.html)
@@ -17,18 +21,25 @@ public class BattlePlayer {
 
 	private int pv = 50;
 	private Image hero;
+	private PathAnimation animation;
 
 	public void init() throws SlickException {
 		this.hero = new Image("battle/hero.png").getScaledCopy(2);
+		this.animation = new PathAnimation(new BezierPath(0, 0, 400, 10, -50, 10, 0, 0), 2000);
 	}
 
 	public void render(GameContainer container, Graphics g) {
-		hero.drawCentered(container.getWidth() * 1 / 4, container.getHeight() / 2);
+		Vector2f p = animation.currentLocation();
+		hero.drawCentered(p.x + container.getWidth() * 1 / 4, p.y + container.getHeight() / 2);
 		Font font = g.getFont();
 		String text = Integer.toString(pv);
 		font.drawString(container.getWidth() * 1 / 4 - font.getWidth(text) / 2,
 				container.getHeight() / 2 - hero.getHeight() / 2 - font.getLineHeight(), text,
 				Color.white);
+	}
+
+	public void update(int delta) {
+		animation.update(delta);
 	}
 
 	public int getPv() {
@@ -37,5 +48,9 @@ public class BattlePlayer {
 
 	public void setPv(int pv) {
 		this.pv = pv;
+	}
+
+	public void startAttack() {
+		animation.start();
 	}
 }

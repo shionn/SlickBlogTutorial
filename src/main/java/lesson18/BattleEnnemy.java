@@ -21,6 +21,10 @@ public class BattleEnnemy {
 		this.ennemy = new Image("battle/gobelin.png").getScaledCopy(2);
 	}
 
+	public void reset() {
+		this.pv = 12;
+	}
+
 	public void render(GameContainer container, Graphics g) {
 		this.ennemy.drawCentered(container.getWidth() * 3 / 4, container.getHeight() / 2);
 		Font font = g.getFont();
@@ -37,4 +41,5 @@ public class BattleEnnemy {
 	public int getPv() {
 		return pv;
 	}
+
 }

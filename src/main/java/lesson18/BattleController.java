@@ -2,11 +2,6 @@ package lesson18;
 
 import java.util.Random;
 
-import lesson17.BattleEnnemy;
-import lesson17.BattlePlayer;
-import lesson17.MainScreenGameState;
-import lesson17.MapGameState;
-
 import org.newdawn.slick.command.Command;
 import org.newdawn.slick.command.InputProviderListener;
 import org.newdawn.slick.state.StateBasedGame;
@@ -58,6 +53,7 @@ public class BattleController implements InputProviderListener {
 	 * critique (+50% de dégât) L'ennemi contre attaque en infligeant entre 5 et 9 dégâts.
 	 */
 	private void attack() {
+		player.startAttack();
 		int playerAttack = 7 + random.nextInt(4);
 		if (random.nextDouble() < .1) {
 			playerAttack += playerAttack / 2;

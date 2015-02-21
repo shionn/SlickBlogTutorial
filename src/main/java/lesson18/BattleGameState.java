@@ -1,8 +1,5 @@
 package lesson18;
 
-import lesson17.BattleEnnemy;
-import lesson17.BattlePlayer;
-
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
@@ -40,6 +37,11 @@ public class BattleGameState extends BasicGameState {
 	}
 
 	@Override
+	public void enter(GameContainer container, StateBasedGame game) throws SlickException {
+		this.ennemy.reset();
+	}
+
+	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g)
 			throws SlickException {
 		this.background.draw(0, 0, container.getWidth(), container.getHeight());
@@ -50,10 +52,7 @@ public class BattleGameState extends BasicGameState {
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
-	}
-
-	@Override
-	public void keyPressed(int key, char c) {
+		this.player.update(delta);
 	}
 
 	@Override

@@ -4,8 +4,6 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
-import org.newdawn.slick.geom.Curve;
-import org.newdawn.slick.geom.Vector2f;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -20,14 +18,11 @@ public class MainScreenGameState extends BasicGameState {
 	public static final int ID = 1;
 	private Image background;
 	private StateBasedGame game;
-	private Curve curve;
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
 		this.game = game;
 		this.background = new Image("background/forest.png");
-		curve = new Curve(new Vector2f(200, 200), new Vector2f(500, 200), new Vector2f(300, 150),
-				new Vector2f(200, 200));
 	}
 
 	/**
@@ -38,7 +33,6 @@ public class MainScreenGameState extends BasicGameState {
 			throws SlickException {
 		background.draw(0, 0, container.getWidth(), container.getHeight());
 		g.drawString("Appuyer sur une touche", 300, 300);
-		g.draw(curve);
 	}
 
 	@Override

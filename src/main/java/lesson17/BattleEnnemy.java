@@ -37,4 +37,5 @@ public class BattleEnnemy {
 	public int getPv() {
 		return pv;
 	}
+
 }

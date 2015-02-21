@@ -22,7 +22,10 @@ import org.newdawn.slick.state.StateBasedGame;
 public class BattleGame extends StateBasedGame {
 
 	public static void main(String[] args) throws SlickException {
-		new AppGameContainer(new BattleGame(), 800, 600, false).start();
+		AppGameContainer app = new AppGameContainer(new BattleGame(), 800, 600, false);
+		app.setVSync(true);
+		app.setShowFPS(false);
+		app.start();
 	}
 
 	public BattleGame() {

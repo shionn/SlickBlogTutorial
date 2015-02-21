@@ -53,6 +53,7 @@ public class BattleGameState extends BasicGameState {
 	public void update(GameContainer container, StateBasedGame game, int delta)
 			throws SlickException {
 		this.player.update(delta);
+		this.ennemy.update(delta);
 	}
 
 	@Override

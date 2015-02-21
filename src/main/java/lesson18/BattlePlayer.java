@@ -25,7 +25,7 @@ public class BattlePlayer {
 
 	public void init() throws SlickException {
 		this.hero = new Image("battle/hero.png").getScaledCopy(2);
-		this.animation = new PathAnimation(new BezierPath(0, 0, 400, 10, -50, 10, 0, 0), 2000);
+		this.animation = new PathAnimation(new BezierPath(0, 0, 400, 1, -50, 20, 0, 0), 2000);
 	}
 
 	public void render(GameContainer container, Graphics g) {
@@ -42,6 +42,10 @@ public class BattlePlayer {
 		animation.update(delta);
 	}
 
+	public void startAttack() {
+		animation.start();
+	}
+
 	public int getPv() {
 		return pv;
 	}
@@ -50,7 +54,4 @@ public class BattlePlayer {
 		this.pv = pv;
 	}
 
-	public void startAttack() {
-		animation.start();
-	}
 }

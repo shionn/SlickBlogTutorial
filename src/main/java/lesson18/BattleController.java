@@ -62,6 +62,7 @@ public class BattleController implements InputProviderListener {
 		if (ennemy.getPv() <= 0) {
 			game.enterState(MapGameState.ID);
 		} else {
+			ennemy.startAttack();
 			int ennemyAttack = 5 + random.nextInt(5);
 			player.setPv(player.getPv() - ennemyAttack);
 			if (player.getPv() <= 0) {
@@ -79,6 +80,7 @@ public class BattleController implements InputProviderListener {
 	 * </ul>
 	 */
 	private void defend() {
+		ennemy.startAttack();
 		int ennemyAttack = (5 + random.nextInt(5)) / 2;
 		player.setPv(player.getPv() - ennemyAttack);
 		if (player.getPv() <= 0) {

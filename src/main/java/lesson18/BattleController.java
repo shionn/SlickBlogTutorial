@@ -84,6 +84,7 @@ public class BattleController implements InputProviderListener {
 		if (player.getPv() <= 0) {
 			game.enterState(MainScreenGameState.ID);
 		} else {
+			player.startAttack();
 			int playerAttack = 7 + random.nextInt(4);
 			ennemy.setPv(ennemy.getPv() - playerAttack);
 			if (ennemy.getPv() <= 0) {

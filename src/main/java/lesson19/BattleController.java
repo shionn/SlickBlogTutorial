@@ -16,131 +16,157 @@ import shionn.slick.animation.AnimationListener;
  */
 public class BattleController implements InputProviderListener {
 
+	private StateBasedGame game;
+
 	private BattlePlayer player;
 	private BattleEnnemy ennemy;
-	private StateBasedGame game;
+
 	private Random random = new Random();
+
+	private BattleCommand mode = BattleCommand.NONE;
 
 	public BattleController(BattlePlayer player, BattleEnnemy ennemy,
 			StateBasedGame game) {
 		this.player = player;
 		this.ennemy = ennemy;
 		this.game = game;
+		initAnimationListeners();
 	}
 
-	public void init() {
+	private void initAnimationListeners() {
 		AnimationListener playerAssignDamage = new AnimationListener() {
 			@Override
 			public void on() {
-				int playerAttack = 7 + random.nextInt(4);
-				if (random.nextDouble() < .1) {
-					playerAttack += playerAttack / 2;
-				}
-				ennemy.setPv(ennemy.getPv() - playerAttack);
+				playerAsignDamage();
 			}
 		};
-		AnimationListener playerEndAttack = new AnimationListener() {
+		AnimationListener endPlayerAttack = new AnimationListener() {
 			@Override
 			public void on() {
-				if (ennemy.getPv() <= 0) {
-					game.enterState(MapGameState.ID);
-				} else {
-					ennemy.startAttack();
-					int ennemyAttack = 5 + random.nextInt(5);
-					player.setPv(player.getPv() - ennemyAttack);
-					if (player.getPv() <= 0) {
-						game.enterState(MainScreenGameState.ID);
-					}
-				}
+				endPlayerAttack();
 			}
 		};
-		this.player.addAnimationListener(playerAssignDamage, playerEndAttack);
+		AnimationListener ennemiAssignDamage = new AnimationListener() {
+			@Override
+			public void on() {
+				ennemyAsignDamage();
+			}
+
+		};
+		AnimationListener endEnnemiAttack = new AnimationListener() {
+			@Override
+			public void on() {
+				endEnnemyAttack();
+			}
+
+		};
+
+		this.player.addAnimationListener(playerAssignDamage, endPlayerAttack);
+		this.ennemy.addAnimationListener(ennemiAssignDamage, endEnnemiAttack);
 	}
 
 	@Override
 	public void controlPressed(Command command) {
-		switch ((BattleCommand) command) {
+		if (mode == BattleCommand.NONE) {
+			this.mode = (BattleCommand) command;
+			startBattle();
+		}
+	}
+
+	/**
+	 * Si le joueur attack il a l'initiative, dans tous les autres cas l'ennemi frappe avant.
+	 */
+	private void startBattle() {
+		switch (mode) {
 		case ATTACK:
-			attack();
+			player.startAttack();
 			break;
 		case DEFEND:
-			defend();
-			break;
 		case FLEE:
-			flee();
-			break;
-
 		default:
+			ennemy.startAttack();
 			break;
+		}
+	}
+
+	/**
+	 * Calcul des dégat infligé par le joueur à l'ennemi
+	 * <em>dans le cas d'une attaque le joueur peut faire un critique et infligé +50% de dégat</em>
+	 */
+	private void playerAsignDamage() {
+		int playerAttack = 7 + random.nextInt(4);
+		if (mode == BattleCommand.ATTACK && random.nextDouble() < .1) {
+			playerAttack += playerAttack / 2;
+		}
+		ennemy.setPv(ennemy.getPv() - playerAttack);
+	}
+
+	/**
+	 * A la fin d'une attaque du joueur,
+	 * <ul>
+	 * <li>si l'ennemi n'as plus de pv le joueur à gagné, retour à la carte</li>
+	 * <li>Sinon, on appel l'action suivant en fonction du mode.</li>
+	 * </ul>
+	 */
+	private void endPlayerAttack() {
+		if (ennemy.getPv() <= 0) {
+			game.enterState(MapGameState.ID);
+			mode = BattleCommand.NONE;
+		} else {
+			switch (mode) {
+			// si le joueur attaquait, contre attaque de l'ennemy
+			case ATTACK:
+				ennemy.startAttack();
+				break;
+			// pas d'autre cas possible
+			default:
+				mode = BattleCommand.NONE;
+				break;
+			}
+		}
+	}
+
+	/**
+	 * Calcul des dégat infligé par l'ennemy au joueur
+	 * <em>dans le cas d'une attaque le joueur peut faire un critique et infligé +50% de dégat</em>
+	 */
+	private void ennemyAsignDamage() {
+		int ennemyAttack = 5 + random.nextInt(5);
+		if (mode == BattleCommand.DEFEND) {
+			ennemyAttack = ennemyAttack / 2;
+		}
+		player.setPv(player.getPv() - ennemyAttack);
+	}
+
+	/**
+	 * A la fin d'une attaque de l'ennemi,
+	 * <ul>
+	 * <li>si le joueur n'as plus de pv le joueur à perdu, retour à l'écran titre</li>
+	 * <li>Sinon, on appel l'action suivant en fonction du mode.</li>
+	 * </ul>
+	 */
+
+	private void endEnnemyAttack() {
+		if (player.getPv() <= 0) {
+			game.enterState(MainScreenGameState.ID);
+			mode = BattleCommand.NONE;
+		} else {
+			switch (mode) {
+			case DEFEND:
+				// si le joueur defend, contre attaque du joueur
+				player.startAttack();
+				break;
+			case FLEE:
+				game.enterState(MapGameState.ID);
+			default:
+				mode = BattleCommand.NONE;
+				break;
+			}
 		}
 	}
 
 	@Override
 	public void controlReleased(Command command) {
-	}
-
-	/**
-	 * Si le joueur attaque : Il inflige entre 7 et 10 points dégâts avec 10% de chance de faire un
-	 * critique (+50% de dégât) L'ennemi contre attaque en infligeant entre 5 et 9 dégâts.
-	 */
-	private void attack() {
-		player.startAttack();
-		// int playerAttack = 7 + random.nextInt(4);
-		// if (random.nextDouble() < .1) {
-		// playerAttack += playerAttack / 2;
-		// }
-		// ennemy.setPv(ennemy.getPv() - playerAttack);
-		if (ennemy.getPv() <= 0) {
-			game.enterState(MapGameState.ID);
-		} else {
-			ennemy.startAttack();
-			int ennemyAttack = 5 + random.nextInt(5);
-			player.setPv(player.getPv() - ennemyAttack);
-			if (player.getPv() <= 0) {
-				game.enterState(MainScreenGameState.ID);
-			}
-		}
-	}
-
-	/**
-	 * Si le joueur défend :
-	 * <ul>
-	 * <li>L'ennemi attaque et inflige entre 5 et 9 dégâts. Mais la moitié des dégâts sont prévenu.</li>
-	 * <li>Le joueur contre attaque en infligeant entre 7 et 10 points de dégâts sans possibilité de
-	 * faire des critiques.</li>
-	 * </ul>
-	 */
-	private void defend() {
-		ennemy.startAttack();
-		int ennemyAttack = (5 + random.nextInt(5)) / 2;
-		player.setPv(player.getPv() - ennemyAttack);
-		if (player.getPv() <= 0) {
-			game.enterState(MainScreenGameState.ID);
-		} else {
-			player.startAttack();
-			int playerAttack = 7 + random.nextInt(4);
-			ennemy.setPv(ennemy.getPv() - playerAttack);
-			if (ennemy.getPv() <= 0) {
-				game.enterState(MapGameState.ID);
-			}
-		}
-	}
-
-	/**
-	 * Si le joueur fuit :
-	 * <ul>
-	 * <li>L'ennemi attaque et inflige entre 5 et 9 dégâts.</li>
-	 * <li>Le joueur quitte le combat.</li>
-	 * </ul>
-	 */
-	private void flee() {
-		int ennemyAttack = 5 + random.nextInt(5);
-		player.setPv(player.getPv() - ennemyAttack);
-		if (player.getPv() <= 0) {
-			game.enterState(MainScreenGameState.ID);
-		} else {
-			game.enterState(MapGameState.ID);
-		}
 	}
 
 }

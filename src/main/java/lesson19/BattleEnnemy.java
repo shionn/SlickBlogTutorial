@@ -8,6 +8,7 @@ import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Vector2f;
 
+import shionn.slick.animation.AnimationListener;
 import shionn.slick.animation.BezierPath;
 import shionn.slick.animation.PathAnimation;
 
@@ -25,6 +26,11 @@ public class BattleEnnemy {
 	public void init() throws SlickException {
 		this.ennemy = new Image("battle/gobelin.png").getScaledCopy(2);
 		this.animation = new PathAnimation(new BezierPath(0, 0, -400, 1, 50, 20, 0, 0), 2000);
+	}
+
+	public void addAnimationListener(AnimationListener assignDamage, AnimationListener endAttack) {
+		this.animation.addListener(1000, assignDamage);
+		this.animation.addListener(2000, endAttack);
 	}
 
 	public void reset() {

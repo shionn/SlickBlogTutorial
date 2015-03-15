@@ -128,7 +128,6 @@ public class BattleController implements InputProviderListener {
 
 	/**
 	 * Calcul des dégat infligé par l'ennemy au joueur
-	 * <em>dans le cas d'une attaque le joueur peut faire un critique et infligé +50% de dégat</em>
 	 */
 	private void ennemyAsignDamage() {
 		int ennemyAttack = 5 + random.nextInt(5);
@@ -145,7 +144,6 @@ public class BattleController implements InputProviderListener {
 	 * <li>Sinon, on appel l'action suivant en fonction du mode.</li>
 	 * </ul>
 	 */
-
 	private void endEnnemyAttack() {
 		if (player.getPv() <= 0) {
 			game.enterState(MainScreenGameState.ID);

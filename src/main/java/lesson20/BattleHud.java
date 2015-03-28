@@ -42,8 +42,8 @@ public class BattleHud implements ComponentListener {
 		fleeButton = new MouseOverArea(container, buttonImage, SPACE, container.getHeight()
 				- (buttonImage.getHeight() + SPACE) * 1, this);
 		log = new TextArea(SPACE + attackButton.getWidth() + SPACE, attackButton.getY(),
-				container.getWidth() - attackButton.getWidth() - SPACE * 3,
-				(buttonImage.getHeight() + SPACE) * 2);
+				container.getWidth() - attackButton.getWidth() - SPACE * 3, buttonImage.getHeight()
+						* 3 + SPACE * 2);
 		log.setBottomUp(true);
 		log.setDefaultFont(container.getDefaultFont());
 	}

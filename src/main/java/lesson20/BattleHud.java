@@ -43,7 +43,7 @@ public class BattleHud implements ComponentListener {
 				- (buttonImage.getHeight() + SPACE) * 1, this);
 		log = new TextArea(SPACE + attackButton.getWidth() + SPACE, attackButton.getY(),
 				container.getWidth() - attackButton.getWidth() - SPACE * 3,
-				(buttonImage.getHeight() + SPACE) * 3);
+				(buttonImage.getHeight() + SPACE) * 2);
 		log.setBottomUp(true);
 		log.setDefaultFont(container.getDefaultFont());
 	}

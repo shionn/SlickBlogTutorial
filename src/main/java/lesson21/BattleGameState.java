@@ -4,6 +4,7 @@ import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.command.InputProvider;
 import org.newdawn.slick.command.KeyControl;
@@ -23,6 +24,7 @@ public class BattleGameState extends BasicGameState {
 	private BattleEnnemy ennemy = new BattleEnnemy();
 	private BattlePlayer player = new BattlePlayer();
 	private BattleHud hud;
+	private Music music;
 
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
@@ -38,12 +40,18 @@ public class BattleGameState extends BasicGameState {
 		provider.addListener(controller);
 		this.hud = new BattleHud(controller);
 		this.hud.init(container);
-		controller.setHud(hud);
+		this.music = new Music("sound/the-last-encounter-short-loop.ogg");
 	}
 
 	@Override
 	public void enter(GameContainer container, StateBasedGame game) throws SlickException {
+		this.music.loop(1, .2f);
 		this.ennemy.reset();
+	}
+
+	@Override
+	public void leave(GameContainer container, StateBasedGame game) throws SlickException {
+		this.music.stop();
 	}
 
 	@Override

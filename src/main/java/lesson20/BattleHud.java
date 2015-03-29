@@ -31,6 +31,7 @@ public class BattleHud implements ComponentListener {
 
 	public BattleHud(BattleController controller) {
 		this.controller = controller;
+		this.controller.setHud(this);
 	}
 
 	public void init(GameContainer container) throws SlickException {

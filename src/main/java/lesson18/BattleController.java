@@ -19,8 +19,7 @@ public class BattleController implements InputProviderListener {
 	private StateBasedGame game;
 	private Random random = new Random();
 
-	public BattleController(BattlePlayer player, BattleEnnemy ennemy,
-			StateBasedGame game) {
+	public BattleController(BattlePlayer player, BattleEnnemy ennemy, StateBasedGame game) {
 		this.player = player;
 		this.ennemy = ennemy;
 		this.game = game;

@@ -38,7 +38,6 @@ public class BattleGameState extends BasicGameState {
 		provider.addListener(controller);
 		this.hud = new BattleHud(controller);
 		this.hud.init(container);
-		controller.setHud(hud);
 	}
 
 	@Override

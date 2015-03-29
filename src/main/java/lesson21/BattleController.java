@@ -2,6 +2,7 @@ package lesson21;
 
 import java.util.Random;
 
+import org.newdawn.slick.SlickException;
 import org.newdawn.slick.command.Command;
 import org.newdawn.slick.command.InputProviderListener;
 import org.newdawn.slick.state.StateBasedGame;
@@ -27,8 +28,8 @@ public class BattleController implements InputProviderListener {
 
 	private BattleHud hud;
 
-	public BattleController(BattlePlayer player, BattleEnnemy ennemy,
-			StateBasedGame game) {
+	public BattleController(BattlePlayer player, BattleEnnemy ennemy, StateBasedGame game)
+			throws SlickException {
 		this.player = player;
 		this.ennemy = ennemy;
 		this.game = game;

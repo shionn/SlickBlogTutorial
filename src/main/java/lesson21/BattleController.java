@@ -171,10 +171,12 @@ public class BattleController implements InputProviderListener {
 	}
 
 	public void quitBattle(final int nextState) {
+		// création d'une pause dans un autre thread pour ne pas bloquer l'affichage
 		new Thread(new Runnable() {
 			@Override
 			public void run() {
 				try {
+					// pause de 2 secondes
 					Thread.sleep(2000);
 				} catch (InterruptedException e) {
 					throw new RuntimeException(e);

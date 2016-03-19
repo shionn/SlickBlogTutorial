@@ -44,7 +44,6 @@ public class CameraGame extends BasicGame {
 	public void init(GameContainer container) throws SlickException {
 		this.container = container;
 		this.map = new TiledMap("map/exemple.tmx");
-
 		SpriteSheet spriteSheet = new SpriteSheet("sprites/character.png", 64, 64);
 		this.animations[0] = loadAnimation(spriteSheet, 0, 1, 0);
 		this.animations[1] = loadAnimation(spriteSheet, 0, 1, 1);

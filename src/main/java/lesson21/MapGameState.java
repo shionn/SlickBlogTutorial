@@ -34,8 +34,9 @@ public class MapGameState extends BasicGameState {
 		this.map.init();
 		this.player.init();
 		this.hud.init();
-		this.controller.setInput(container.getInput());
-		container.getInput().addKeyListener(controller);
+		Input input = container.getInput();
+		this.controller.setInput(input);
+		input.addKeyListener(controller);
 	}
 
 	@Override

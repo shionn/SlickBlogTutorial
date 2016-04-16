@@ -22,22 +22,13 @@ public class BattleGameState extends BasicGameState {
 	public static final int ID = 3;
 	private Random random = new Random();
 	private StateBasedGame game;
-	private Image[] backgrounds = new Image[2];
+	private Image[] backgrounds = new Image[2]; // Les background
+	private int chosenBackground = 0; // le background actif
 	private Image ennemy;
 	private Image hero;
-	private int chosenBackground = 0;
 
 	/**
-	 * Quand je commence un combat je choisi aléatoirement le combat. La méthode serai la même pour
-	 * toute autre chose.
-	 */
-	@Override
-	public void enter(GameContainer container, StateBasedGame game) throws SlickException {
-		this.chosenBackground = random.nextInt(backgrounds.length);
-	}
-
-	/**
-	 * A l'initialisation du jeux je charge tous les backgrounds
+	 * A l'initialisation du jeux je charge tous les backgrounds (ici que deux)
 	 */
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
@@ -46,6 +37,15 @@ public class BattleGameState extends BasicGameState {
 		this.backgrounds[1] = new Image("background/battle-alternatif.png");
 		this.ennemy = new Image("battle/gobelin.png").getScaledCopy(2);
 		this.hero = new Image("battle/hero.png").getScaledCopy(2);
+	}
+
+	/**
+	 * Quand je commence un combat (c'est à dire quand j'entre dans cette boucle) je choisis
+	 * aléatoirement le fond. La méthode serait la même pour toutes autre chose.
+	 */
+	@Override
+	public void enter(GameContainer container, StateBasedGame game) throws SlickException {
+		this.chosenBackground = random.nextInt(backgrounds.length);
 	}
 
 	/**

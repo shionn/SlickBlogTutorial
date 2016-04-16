@@ -29,8 +29,8 @@ public class RandomBackgroundBattleGame extends StateBasedGame {
 	}
 
 	/**
-	 * La seul difference etant au niveau de la classe de BattleGameState, tous le reste est
-	 * identique à la lesson 16
+	 * La seule difference etant au niveau de la classe de BattleGameState, tous le reste est
+	 * identique à la leçon 16
 	 */
 	public RandomBackgroundBattleGame() {
 		super("Lesson 16 Question de Lecteur :: RandomBackgroundBattleGame");

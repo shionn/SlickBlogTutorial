@@ -29,7 +29,7 @@ public class BattleGame extends StateBasedGame {
 	}
 
 	public BattleGame() {
-		super("Lesson 20 :: BattleGame");
+		super("Lesson 21 :: BattleGame");
 	}
 
 	/**

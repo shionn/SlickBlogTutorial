@@ -2,6 +2,7 @@ package lesson21;
 
 import java.util.Random;
 
+import org.newdawn.slick.Music;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.command.Command;
 import org.newdawn.slick.command.InputProviderListener;
@@ -28,11 +29,14 @@ public class BattleController implements InputProviderListener {
 
 	private BattleHud hud;
 
+	private Music victory;
+
 	public BattleController(BattlePlayer player, BattleEnnemy ennemy, StateBasedGame game)
 			throws SlickException {
 		this.player = player;
 		this.ennemy = ennemy;
 		this.game = game;
+		this.victory = new Music("sound/lively-meadow-victory-fanfare.ogg");
 		initAnimationListeners();
 	}
 
@@ -115,6 +119,7 @@ public class BattleController implements InputProviderListener {
 	private void endPlayerAttack() {
 		if (ennemy.getPv() <= 0) {
 			hud.addLog("Vous avez gagné !");
+			victory.play();
 			quitBattle(MapGameState.ID);
 		} else {
 			switch (mode) {
@@ -176,8 +181,7 @@ public class BattleController implements InputProviderListener {
 			@Override
 			public void run() {
 				try {
-					// pause de 2 secondes
-					Thread.sleep(2000);
+					Thread.sleep(5000);
 				} catch (InterruptedException e) {
 					throw new RuntimeException(e);
 				}
